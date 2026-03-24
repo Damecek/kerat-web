@@ -99,7 +99,7 @@ const locales = {
       home: {
         slug: "",
         title: "Kerat Keramika | Ručně vyráběná keramika z Prahy",
-        description: "Moderní prezentace ručně vyráběné dekorativní i užitkové keramiky. Objevte sortiment, glazury, příběh dílny a přejděte do obchodu KERAT."
+        description: "KERAT Keramika Praha – ručně vyráběná užitková a dekorativní keramika. 270+ výrobků, 40 glazur, rodinná tradice od 18. století. Hrnky, čajové soupravy, zakázky, restaurace."
       },
       products: {
         slug: "sortiment",
@@ -140,6 +140,7 @@ const locales = {
       storyTitle: "Rodinná dílna a osobní přístup",
       storyLead: "Zkušenosti předávané generacemi, vlastní receptury glazur a vzorkovna v Praze 6. Zákazník u nás nenakupuje anonymně, ale přímo od lidí, kteří keramiku vyrábějí.",
       trustTitle: "Proč nakupovat u KERAT",
+      trustHeading: "Poctivá keramika přímo od výrobce",
       trust: [
         {
           title: "Poctivá výroba",
@@ -284,12 +285,35 @@ const locales = {
           body: "Vzorkovna a atelier v Praze 6 umožňují osobní konzultaci, výběr glazur i přímé představení sortimentu."
         }
       ],
-      closing: "Otevírací doba z legacy webu uvádí pondělí až pátek 8-17 a večer či víkend po dohodě. Tento model zachováváme jako kontaktní informaci i v nové prezentaci."
+      closing: "Vzorkovna a atelier jsou otevřeny pondělí až pátek 8:00–17:00, večer a víkend po dohodě. Přijďte se podívat, prohlédnout sortiment a vybrat glazuru osobně."
     },
     contactPage: {
       title: "Kontaktujte dílnu KERAT",
       lead: "Chcete vybrat konkrétní keramiku, domluvit zakázku nebo přejít rovnou do obchodu? Ozvěte se přímo do atelieru nebo pokračujte do online nabídky."
     },
+    faq: {
+      eyebrow: "Máte otázky?",
+      title: "Časté dotazy",
+      items: [
+        {
+          q: "Jak mohu objednat keramiku KERAT?",
+          a: "Keramiku objednáte přes náš online obchod na Fler.cz nebo nás kontaktujte přímo e-mailem na stepanek@kerat.cz. Větší a zakázkové objednávky řešíme individuálně."
+        },
+        {
+          q: "Je možná zakázková výroba s vlastním motivem nebo logem?",
+          a: "Ano, zakázkovou výrobu nabízíme. Realizujeme firemní loga, reklamní keramiku i individuální motivy. Kontaktujte nás pro nacenění a podrobnosti."
+        },
+        {
+          q: "Které glazury jsou dostupné skladem?",
+          a: "Skladem držíme 12 nejpoptávanějších designů: glazury č. 1, 2, 3, 4, 14, 17, 30, 35, 36, 37, 38 a 39. Ostatních 28 glazur vyrábíme na objednávku."
+        },
+        {
+          q: "Mohu navštívit vzorkovnu osobně?",
+          a: "Vzorkovna a atelier v Praze 6 Dejvicích jsou otevřeny pondělí až pátek 8:00–17:00. Večerní a víkendní návštěvy domluvte předem telefonicky nebo e-mailem."
+        }
+      ]
+    },
+    ctaStripText: "Hledáte unikátní keramiku nebo zakázku na míru?",
     ctas: {
       primary: "Do online obchodu",
       secondary: "Kontaktovat atelier",
@@ -333,7 +357,7 @@ const locales = {
       home: {
         slug: "",
         title: "KERAT Pottery | Handmade ceramics from Prague",
-        description: "Modern presentation of handmade decorative and utility pottery. Explore collections, glazes, workshop story and the KERAT online shop."
+        description: "KERAT Pottery Prague – handmade decorative and utility ceramics. 270+ products, 40 glazes, family tradition since the 18th century. Mugs, tea sets, custom orders, hospitality."
       },
       products: {
         slug: "products",
@@ -374,6 +398,7 @@ const locales = {
       storyTitle: "Family workshop with personal service",
       storyLead: "Generational know-how, in-house glaze recipes and a showroom in Prague 6 create a direct buying experience instead of anonymous retail.",
       trustTitle: "Why customers choose KERAT",
+      trustHeading: "Quality pottery, direct from the maker",
       trust: [
         {
           title: "Careful production",
@@ -459,12 +484,35 @@ const locales = {
         { title: "Apprentices and continuity", body: "Since 1993 the workshop has cooperated with a vocational school and helped new generations learn the trade." },
         { title: "Direct customer service", body: "The Prague 6 showroom allows visitors to see the assortment, compare glazes and discuss custom production directly with the makers." }
       ],
-      closing: "The legacy website lists opening hours as Monday to Friday 8 am to 5 pm, with evenings and weekends by arrangement."
+      closing: "The showroom and workshop are open Monday to Friday, 08:00–17:00, with evenings and weekends by arrangement. Come and see the collection and choose glazes in person."
     },
     contactPage: {
       title: "Contact the KERAT workshop",
       lead: "Need help choosing pottery, planning a custom order or visiting the online shop? Reach the workshop directly or continue to the external storefront."
     },
+    faq: {
+      eyebrow: "Questions?",
+      title: "Frequently asked questions",
+      items: [
+        {
+          q: "How can I order KERAT pottery?",
+          a: "You can order through our online shop on Fler.cz or contact us directly at stepanek@kerat.cz. Larger and custom orders are handled individually."
+        },
+        {
+          q: "Is custom production with a logo or motif possible?",
+          a: "Yes, we offer custom production including company logos, promotional ceramics and individual motifs. Contact us for pricing and details."
+        },
+        {
+          q: "Which glazes are available from stock?",
+          a: "We keep 12 of the most popular designs in stock: glazes no. 1, 2, 3, 4, 14, 17, 30, 35, 36, 37, 38 and 39. The remaining 28 glazes are made to order."
+        },
+        {
+          q: "Can I visit the showroom in person?",
+          a: "The showroom and workshop in Prague 6 Dejvice are open Monday to Friday, 08:00–17:00. Evening and weekend visits can be arranged in advance by phone or email."
+        }
+      ]
+    },
+    ctaStripText: "Looking for unique pottery or a custom order?",
     ctas: {
       primary: "Go to the online shop",
       secondary: "Contact the workshop",
@@ -508,7 +556,7 @@ const locales = {
       home: {
         slug: "",
         title: "KERAT Keramik | Handgefertigte Keramik aus Prag",
-        description: "Moderne Präsentation handgefertigter Gebrauchs- und Dekorkeramik. Entdecken Sie Sortiment, Glasuren, Werkstattgeschichte und den Online-Shop von KERAT."
+        description: "KERAT Keramik Prag – handgefertigte Gebrauchs- und Dekorationskeramik. 270+ Produkte, 40 Glasuren, Familientradition seit dem 18. Jahrhundert. Tassen, Teesets, Sonderanfertigungen."
       },
       products: {
         slug: "sortiment",
@@ -549,6 +597,7 @@ const locales = {
       storyTitle: "Familienwerkstatt mit persönlichem Service",
       storyLead: "Überliefertes Wissen, eigene Glasurrezepturen und ein Ausstellungsraum in Prag 6 schaffen ein direktes Kauferlebnis statt anonymem Handel.",
       trustTitle: "Warum KERAT überzeugt",
+      trustHeading: "Hochwertige Keramik direkt vom Hersteller",
       trust: [
         {
           title: "Sorgfältige Produktion",
@@ -634,12 +683,35 @@ const locales = {
         { title: "Lehrlinge und Weitergabe", body: "Seit 1993 arbeitet die Werkstatt mit einer Berufsschule zusammen und bildet neue Generationen im Handwerk mit aus." },
         { title: "Direkter Kundenkontakt", body: "Im Showroom in Prag 6 können Besucher das Sortiment sehen, Glasuren vergleichen und Sonderwünsche direkt besprechen." }
       ],
-      closing: "Die Angaben des alten Webs nennen Öffnungszeiten Montag bis Freitag von 8 bis 17 Uhr, abends und am Wochenende nach Vereinbarung."
+      closing: "Showroom und Werkstatt sind Montag bis Freitag von 08:00–17:00 Uhr geöffnet, abends und am Wochenende nach Vereinbarung. Besuchen Sie uns und entdecken Sie das Sortiment persönlich."
     },
     contactPage: {
       title: "Kontakt zur Werkstatt KERAT",
       lead: "Sie möchten Keramik auswählen, eine Sonderanfertigung besprechen oder direkt zum Shop wechseln? Kontaktieren Sie die Werkstatt direkt oder gehen Sie weiter zum externen Angebot."
     },
+    faq: {
+      eyebrow: "Fragen?",
+      title: "Häufig gestellte Fragen",
+      items: [
+        {
+          q: "Wie kann ich KERAT Keramik bestellen?",
+          a: "Sie können über unseren Online-Shop auf Fler.cz bestellen oder uns direkt unter stepanek@kerat.cz kontaktieren. Größere und Sonderbestellungen werden individuell abgestimmt."
+        },
+        {
+          q: "Ist eine Sonderanfertigung mit Logo oder eigenem Motiv möglich?",
+          a: "Ja, wir bieten Sonderanfertigungen an, einschließlich Firmenlogos, Werbekeramik und individueller Motive. Kontaktieren Sie uns für ein Angebot."
+        },
+        {
+          q: "Welche Glasuren sind ab Lager verfügbar?",
+          a: "Wir halten 12 der beliebtesten Designs auf Lager: Glasuren Nr. 1, 2, 3, 4, 14, 17, 30, 35, 36, 37, 38 und 39. Die übrigen 28 Glasuren werden auf Bestellung gefertigt."
+        },
+        {
+          q: "Kann ich den Showroom persönlich besuchen?",
+          a: "Showroom und Werkstatt in Prag 6 Dejvice sind Montag bis Freitag von 08:00–17:00 Uhr geöffnet. Abend- und Wochenendbesuche können vorab per Telefon oder E-Mail vereinbart werden."
+        }
+      ]
+    },
+    ctaStripText: "Suchen Sie besondere Keramik oder eine Sonderanfertigung?",
     ctas: {
       primary: "Zum Online-Shop",
       secondary: "Werkstatt kontaktieren",
@@ -829,13 +901,13 @@ function renderHero(locale, currentDepth) {
         </div>
         <div class="hero-visual">
           <figure class="hero-card hero-card-main">
-            <img src="${assetHref("srdce_dvojak_hrnek.jpeg", currentDepth)}" alt="${escapeHtml(t.labels.heroImageAlt)}">
+            <img src="${assetHref("srdce_dvojak_hrnek.jpeg", currentDepth)}" alt="${escapeHtml(t.labels.heroImageAlt)}" fetchpriority="high" decoding="async">
           </figure>
           <figure class="hero-card hero-card-small">
-            <img src="${assetHref("dilna5.jpg", currentDepth)}" alt="${escapeHtml(t.labels.processAlt)}">
+            <img src="${assetHref("dilna5.jpg", currentDepth)}" alt="${escapeHtml(t.labels.processAlt)}" fetchpriority="high" decoding="async">
           </figure>
           <figure class="hero-card hero-card-small hero-card-offset">
-            <img src="${assetHref("vzorkovna1.jpg", currentDepth)}" alt="${escapeHtml(t.labels.showroomAlt)}">
+            <img src="${assetHref("vzorkovna1.jpg", currentDepth)}" alt="${escapeHtml(t.labels.showroomAlt)}" loading="lazy" decoding="async">
           </figure>
         </div>
       </div>
@@ -849,7 +921,7 @@ function renderCategories(locale, currentDepth, featured = false) {
     .map(
       (category) => `
         <article class="category-card">
-          <img src="${assetHref(category.image, currentDepth)}" alt="${escapeHtml(category.name)}">
+          <img src="${assetHref(category.image, currentDepth)}" alt="${escapeHtml(category.name)}" loading="lazy" decoding="async">
           <div class="category-card-body">
             <h3>${escapeHtml(category.name)}</h3>
             <p>${escapeHtml(category.description)}</p>
@@ -893,7 +965,7 @@ function renderGlazeCards(locale, currentDepth, limit = null) {
       const badgeClass = glaze.stock ? "badge-stocked" : "badge-order";
       return `
         <article class="glaze-card">
-          <img src="${assetHref(glaze.image, currentDepth)}" alt="${escapeHtml(`${name} ${t.nav.glazes}`)}">
+          <img src="${assetHref(glaze.image, currentDepth)}" alt="${escapeHtml(`${name} ${t.nav.glazes}`)}" loading="lazy" decoding="async">
           <div class="glaze-card-body">
             <div class="glaze-meta">
               <span class="glaze-id">#${glaze.id}</span>
@@ -971,15 +1043,21 @@ function renderStory(locale, currentDepth, featured = false) {
           }
         </div>
         <div class="story-gallery">
-          <img src="${assetHref("dilna1.jpg", currentDepth)}" alt="${escapeHtml(t.labels.processAlt)}">
-          <img src="${assetHref("dilna2.jpg", currentDepth)}" alt="${escapeHtml(t.labels.processAlt)}">
-          <img src="${assetHref("vzorkovna2.jpg", currentDepth)}" alt="${escapeHtml(t.labels.showroomAlt)}">
-          <img src="${assetHref("ulice.jpg", currentDepth)}" alt="${escapeHtml(t.labels.contactHeading)}">
+          <img src="${assetHref("dilna1.jpg", currentDepth)}" alt="${escapeHtml(t.labels.processAlt)}" loading="lazy" decoding="async">
+          <img src="${assetHref("dilna2.jpg", currentDepth)}" alt="${escapeHtml(t.labels.processAlt)}" loading="lazy" decoding="async">
+          <img src="${assetHref("vzorkovna2.jpg", currentDepth)}" alt="${escapeHtml(t.labels.showroomAlt)}" loading="lazy" decoding="async">
+          <img src="${assetHref("ulice.jpg", currentDepth)}" alt="${escapeHtml(t.labels.contactHeading)}" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
   `;
 }
+
+const trustIcons = [
+  `<svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z"/></svg>`,
+  `<svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z"/></svg>`,
+  `<svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>`
+];
 
 function renderTrust(locale) {
   const t = locales[locale];
@@ -988,13 +1066,14 @@ function renderTrust(locale) {
       <div class="shell">
         <div class="section-heading narrow">
           <p class="eyebrow">${escapeHtml(t.homeSections.trustTitle)}</p>
-          <h2>${escapeHtml(t.homeSections.trustTitle)}</h2>
+          <h2>${escapeHtml(t.homeSections.trustHeading)}</h2>
         </div>
         <div class="trust-grid">
           ${t.homeSections.trust
             .map(
-              (item) => `
+              (item, i) => `
                 <article class="trust-card">
+                  ${trustIcons[i] ?? ""}
                   <h3>${escapeHtml(item.title)}</h3>
                   <p>${escapeHtml(item.body)}</p>
                 </article>
@@ -1020,13 +1099,15 @@ function renderContact(locale, asPage = false, currentDepth = 0) {
         <div class="contact-grid">
           <div class="contact-card">
             <h2>${escapeHtml(t.labels.contactHeading)}</h2>
-            <p>${escapeHtml(contact.company)}</p>
-            <p>${escapeHtml(contact.person)}</p>
-            <p>${escapeHtml(contact.street)}</p>
-            <p>${escapeHtml(contact.city)}, ${escapeHtml(contact.postalCode)}</p>
-            <p><a href="${contact.phoneHref}">${escapeHtml(contact.phoneDisplay)}</a></p>
-            <p><a href="mailto:${contact.emailPrimary}">${escapeHtml(contact.emailPrimary)}</a></p>
-            <p><a href="mailto:${contact.emailSecondary}">${escapeHtml(contact.emailSecondary)}</a></p>
+            <address>
+              <p>${escapeHtml(contact.company)}</p>
+              <p>${escapeHtml(contact.person)}</p>
+              <p>${escapeHtml(contact.street)}</p>
+              <p>${escapeHtml(contact.city)}, ${escapeHtml(contact.postalCode)}</p>
+              <p><a href="${contact.phoneHref}">${escapeHtml(contact.phoneDisplay)}</a></p>
+              <p><a href="mailto:${contact.emailPrimary}">${escapeHtml(contact.emailPrimary)}</a></p>
+              <p><a href="mailto:${contact.emailSecondary}">${escapeHtml(contact.emailSecondary)}</a></p>
+            </address>
           </div>
           <div class="contact-card">
             <h2>${escapeHtml(t.homeSections.storyTitle)}</h2>
@@ -1043,6 +1124,45 @@ function renderContact(locale, asPage = false, currentDepth = 0) {
   `;
 }
 
+function renderFaq(locale) {
+  const t = locales[locale];
+  const { faq } = t;
+  return `
+    <section class="section faq-section">
+      <div class="shell">
+        <div class="section-heading narrow">
+          <p class="eyebrow">${escapeHtml(faq.eyebrow)}</p>
+          <h2>${escapeHtml(faq.title)}</h2>
+        </div>
+        <div class="faq-list">
+          ${faq.items
+            .map(
+              (item) => `
+            <details class="faq-item">
+              <summary>${escapeHtml(item.q)}</summary>
+              <p>${escapeHtml(item.a)}</p>
+            </details>
+          `
+            )
+            .join("")}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderCtaStrip(locale, currentDepth) {
+  const t = locales[locale];
+  return `
+    <section class="cta-strip">
+      <div class="shell cta-strip-inner">
+        <p>${escapeHtml(t.ctaStripText)}</p>
+        <a class="button button-primary" href="${shopUrl}" target="_blank" rel="noreferrer">${escapeHtml(t.ctas.primary)}</a>
+      </div>
+    </section>
+  `;
+}
+
 function renderPageBody(locale, pageKey, currentDepth) {
   if (pageKey === "home") {
     return [
@@ -1051,6 +1171,8 @@ function renderPageBody(locale, pageKey, currentDepth) {
       renderGlazes(locale, currentDepth, true),
       renderStory(locale, currentDepth, true),
       renderTrust(locale),
+      renderFaq(locale),
+      renderCtaStrip(locale, currentDepth),
       renderContact(locale, false, currentDepth)
     ].join("");
   }
@@ -1092,12 +1214,21 @@ function buildStructuredData(locale, pageKey) {
 
   const business = {
     "@context": "https://schema.org",
-    "@type": "Store",
+    "@type": ["Store", "ArtGallery"],
     name: contact.company,
-    image: `${siteUrl}${assetUrl("srdce_dvojak_hrnek.jpeg")}`,
+    image: [
+      `${siteUrl}${assetUrl("srdce_dvojak_hrnek.jpeg")}`,
+      `${siteUrl}${assetUrl("dilna1.jpg")}`,
+      `${siteUrl}${assetUrl("vzorkovna1.jpg")}`
+    ],
     url: absoluteUrl(locale, "home"),
     telephone: contact.phoneDisplay,
     email: contact.emailPrimary,
+    priceRange: "€€",
+    currenciesAccepted: "CZK, EUR",
+    paymentAccepted: "Cash, Credit Card",
+    hasMap: "https://maps.google.com/?q=Stavitelská+6,+Praha+6+Dejvice",
+    description: locales[locale].story.intro,
     address: {
       "@type": "PostalAddress",
       streetAddress: contact.street,
@@ -1116,10 +1247,29 @@ function buildStructuredData(locale, pageKey) {
     ]
   };
 
-  return `
-    <script type="application/ld+json">${JSON.stringify(breadcrumbList)}</script>
-    <script type="application/ld+json">${JSON.stringify(business)}</script>
-  `;
+  const scripts = [
+    `<script type="application/ld+json">${JSON.stringify(breadcrumbList)}</script>`,
+    `<script type="application/ld+json">${JSON.stringify(business)}</script>`
+  ];
+
+  if (pageKey === "home") {
+    const faqData = locales[locale].faq;
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqData.items.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.a
+        }
+      }))
+    };
+    scripts.push(`<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`);
+  }
+
+  return scripts.join("\n    ");
 }
 
 function renderPage(locale, pageKey) {
@@ -1127,22 +1277,42 @@ function renderPage(locale, pageKey) {
   const page = localeData.pages[pageKey];
   const depth = depthFor(locale, pageKey);
   const root = relativeRoot(depth);
-  const alternateLinks = Object.keys(locales)
-    .map(
+  const ogImage = `${siteUrl}${assetUrl("srdce_dvojak_hrnek.jpeg")}`;
+  const alternateLinks = [
+    `<link rel="alternate" hreflang="x-default" href="${absoluteUrl("cs", pageKey)}">`,
+    ...Object.keys(locales).map(
       (code) =>
         `<link rel="alternate" hreflang="${locales[code].lang}" href="${absoluteUrl(code, pageKey)}">`
     )
-    .join("\n");
+  ].join("\n");
+
+  const preloadHero = pageKey === "home"
+    ? `<link rel="preload" as="image" href="${assetHref("srdce_dvojak_hrnek.jpeg", depth)}">`
+    : "";
 
   return `<!doctype html>
 <html lang="${localeData.lang}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#a14d2c">
     <title>${escapeHtml(page.title)}</title>
     <meta name="description" content="${escapeHtml(page.description)}">
     <link rel="canonical" href="${absoluteUrl(locale, pageKey)}">
     ${alternateLinks}
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="${escapeHtml(localeData.siteName)}">
+    <meta property="og:title" content="${escapeHtml(page.title)}">
+    <meta property="og:description" content="${escapeHtml(page.description)}">
+    <meta property="og:url" content="${absoluteUrl(locale, pageKey)}">
+    <meta property="og:image" content="${ogImage}">
+    <meta property="og:locale" content="${localeData.lang}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${escapeHtml(page.title)}">
+    <meta name="twitter:description" content="${escapeHtml(page.description)}">
+    <meta name="twitter:image" content="${ogImage}">
+    ${preloadHero}
     <link rel="stylesheet" href="${root}/assets/styles.css">
     ${buildStructuredData(locale, pageKey)}
   </head>
