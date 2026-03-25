@@ -361,6 +361,12 @@ h3 {
   overflow: hidden;
 }
 
+.category-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 .category-card img {
   aspect-ratio: 4 / 3;
   object-fit: cover;
@@ -371,6 +377,23 @@ h3 {
 .trust-card,
 .contact-card {
   padding: 1.1rem;
+}
+
+.category-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.55rem;
+  color: var(--accent-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.category-card-arrow {
+  font-size: 1rem;
 }
 
 .glaze-card img {
@@ -418,6 +441,40 @@ h3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.4rem;
+}
+
+.category-detail-meta {
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.product-card {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.product-card img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.product-card-body {
+  padding: 1rem 1rem 1.1rem;
+}
+
+.product-card-body p {
+  margin: 0;
+  color: var(--text);
+  font-weight: 600;
 }
 
 .story-points {
@@ -601,7 +658,8 @@ h3 {
 
   .category-grid,
   .glaze-grid,
-  .trust-grid {
+  .trust-grid,
+  .product-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -640,7 +698,8 @@ h3 {
   .category-grid,
   .glaze-grid,
   .trust-grid,
-  .story-gallery {
+  .story-gallery,
+  .product-gallery {
     grid-template-columns: 1fr;
   }
 

@@ -163,60 +163,98 @@ const locales = {
     categories: [
       {
         slug: "tea-sets",
+        letter: "A",
         name: "Čajové soupravy",
         image: "F128.jpg",
         description: "Soupravy pro pomalé stolování, čajové rituály a dárkové příležitosti."
       },
       {
         slug: "mugs",
+        letter: "B",
         name: "Hrnky",
         image: "F101.jpg",
         description: "Ručně tvarované hrnky, oblíbené dárkové kusy i každodenní keramika."
       },
       {
         slug: "aroma",
+        letter: "C",
         name: "Aroma lampy a svícny",
         image: "F24.jpg",
         description: "Keramika pro atmosféru interiéru, světlo, vůni a dekorativní akcent."
       },
       {
+        slug: "others",
+        letter: "D",
+        name: "Ostatní",
+        image: "F165.jpg",
+        description: "Směs originálních kusů, dekorací a drobných kolekcí, které se nevejdou do jedné škatulky."
+      },
+      {
         slug: "gifts",
+        letter: "E",
         name: "Dárky",
         image: "F73.jpg",
         description: "Vtipná keramika, dárkové předměty a drobnosti s osobitým charakterem."
       },
       {
         slug: "banks",
+        letter: "F",
         name: "Kasičky a popelníky",
         image: "F76.jpg",
         description: "Tradiční i nápadité tvary, které si zákazníci z původního katalogu dobře pamatují."
       },
       {
         slug: "tableware",
+        letter: "G",
         name: "Keramika na stůl",
         image: "F120.jpg",
         description: "Servírování, stolní doplňky a užitková keramika pro každodenní provoz."
       },
       {
+        slug: "small-objects",
+        letter: "H",
+        name: "Drobnosti",
+        image: "F107.jpg",
+        description: "Menší keramické kusy, které fungují jako dárek, dekorace i praktický detail."
+      },
+      {
         slug: "kitchen",
+        letter: "I",
         name: "Keramika do kuchyně",
         image: "F145.jpg",
         description: "Pekáčky, dózy, kořenky a další funkční kusy do domácnosti i na chalupu."
       },
       {
-        slug: "decor",
-        name: "Dekorace a vázy",
+        slug: "for-him",
+        letter: "J",
+        name: "Pro pány",
+        image: "F67.jpg",
+        description: "Dárkové a užitkové kusy s robustnějším charakterem a motivy pro muže."
+      },
+      {
+        slug: "for-her",
+        letter: "K",
+        name: "Pro dámy",
+        image: "F1.jpg",
+        description: "Jemnější tvary, svícny, aroma keramika a dárky vhodné jako osobní pozornost."
+      },
+      {
+        slug: "vases",
+        letter: "L",
+        name: "Vázy",
         image: "F129.jpg",
-        description: "Bytové doplňky, vázy, zvonky a další dekorativní keramika s glazovaným povrchem."
+        description: "Glazované vázy a dekorativní nádoby pro interiér i aranžování."
       },
       {
         slug: "hospitality",
+        letter: "M",
         name: "Pro restaurace a hospody",
         image: "F255.jpg",
         description: "Odolné kusy pro gastro provoz, servírování a originální atmosféru podniku."
       },
       {
         slug: "dining",
+        letter: "N",
         name: "Jídelní sety",
         image: "F5.jpg",
         description: "Sady pro kompletní stolování ve sjednocených glazurách a tvarech."
@@ -419,16 +457,20 @@ const locales = {
       lead: "The assortment includes hundreds of items with a high amount of hand finishing. KERAT also produces promotional ceramics, company logos and custom motifs."
     },
     categories: [
-      { slug: "tea-sets", name: "Tea sets", image: "F128.jpg", description: "Sets designed for slow serving, tea rituals and premium gift moments." },
-      { slug: "mugs", name: "Mugs", image: "F101.jpg", description: "Hand-shaped mugs for everyday use and memorable gifts." },
-      { slug: "aroma", name: "Aroma lamps and candle holders", image: "F24.jpg", description: "Ceramics that build atmosphere through fragrance, light and surface texture." },
-      { slug: "gifts", name: "Gifts", image: "F73.jpg", description: "Playful pieces, gift ceramics and small objects with a strong handmade identity." },
-      { slug: "banks", name: "Piggy banks and ashtrays", image: "F76.jpg", description: "Classic and unusual shapes retained from the original catalogue." },
-      { slug: "tableware", name: "Tableware", image: "F120.jpg", description: "Serving pieces and tabletop accessories for daily use." },
-      { slug: "kitchen", name: "Kitchen pottery", image: "F145.jpg", description: "Roasters, storage jars, spice sets and other useful pieces for home or cottage." },
-      { slug: "decor", name: "Decor and vases", image: "F129.jpg", description: "Interior accents, vases, bells and decorative glazed ceramics." },
-      { slug: "hospitality", name: "For restaurants and pubs", image: "F255.jpg", description: "Durable ceramics for hospitality spaces and original presentation." },
-      { slug: "dining", name: "Dining sets", image: "F5.jpg", description: "Coordinated sets for table service in matching glazes and shapes." }
+      { slug: "tea-sets", letter: "A", name: "Tea sets", image: "F128.jpg", description: "Sets designed for slow serving, tea rituals and premium gift moments." },
+      { slug: "mugs", letter: "B", name: "Mugs", image: "F101.jpg", description: "Hand-shaped mugs for everyday use and memorable gifts." },
+      { slug: "aroma", letter: "C", name: "Aroma lamps and candle holders", image: "F24.jpg", description: "Ceramics that build atmosphere through fragrance, light and surface texture." },
+      { slug: "others", letter: "D", name: "Others", image: "F165.jpg", description: "A broader mix of distinctive decorative and utility pieces from the original catalogue." },
+      { slug: "gifts", letter: "E", name: "Gifts", image: "F73.jpg", description: "Playful pieces, gift ceramics and small objects with a strong handmade identity." },
+      { slug: "banks", letter: "F", name: "Piggy banks and ashtrays", image: "F76.jpg", description: "Classic and unusual shapes retained from the original catalogue." },
+      { slug: "tableware", letter: "G", name: "Tableware", image: "F120.jpg", description: "Serving pieces and tabletop accessories for daily use." },
+      { slug: "small-objects", letter: "H", name: "Small objects", image: "F107.jpg", description: "Small ceramic details that work as gifts, accents and practical pieces." },
+      { slug: "kitchen", letter: "I", name: "Kitchen pottery", image: "F145.jpg", description: "Roasters, storage jars, spice sets and other useful pieces for home or cottage." },
+      { slug: "for-him", letter: "J", name: "For men", image: "F67.jpg", description: "Gift and utility ceramics with a stronger, more robust character." },
+      { slug: "for-her", letter: "K", name: "For women", image: "F1.jpg", description: "Softer shapes, aroma ceramics and decorative pieces selected for gifting." },
+      { slug: "vases", letter: "L", name: "Vases", image: "F129.jpg", description: "Glazed vases and decorative vessels for interiors and floral styling." },
+      { slug: "hospitality", letter: "M", name: "For restaurants and pubs", image: "F255.jpg", description: "Durable ceramics for hospitality spaces and original presentation." },
+      { slug: "dining", letter: "N", name: "Dining sets", image: "F5.jpg", description: "Coordinated sets for table service in matching glazes and shapes." }
     ],
     glazeNames: [
       "Coffee",
@@ -618,16 +660,20 @@ const locales = {
       lead: "Das Angebot umfasst Hunderte Produkte mit hohem Anteil an Handarbeit. Zusätzlich entstehen Werbekeramik, Firmenlogos und individuelle Motive auf Bestellung."
     },
     categories: [
-      { slug: "tea-sets", name: "Teesets", image: "F128.jpg", description: "Sets für ruhige Tischmomente, Teezeremonien und hochwertige Geschenke." },
-      { slug: "mugs", name: "Tassen", image: "F101.jpg", description: "Handgeformte Tassen für den Alltag und als beliebtes Geschenk." },
-      { slug: "aroma", name: "Aromalampen und Kerzenständer", image: "F24.jpg", description: "Keramik für Duft, Licht und wohnliche Atmosphäre." },
-      { slug: "gifts", name: "Geschenke", image: "F73.jpg", description: "Verspielte Keramikobjekte und kleine Stücke mit eigenem Charakter." },
-      { slug: "banks", name: "Spardosen und Aschenbecher", image: "F76.jpg", description: "Traditionelle und ungewöhnliche Formen aus dem ursprünglichen Katalog." },
-      { slug: "tableware", name: "Tischkeramik", image: "F120.jpg", description: "Servierkeramik und Zubehör für den täglichen Gebrauch." },
-      { slug: "kitchen", name: "Küchenkeramik", image: "F145.jpg", description: "Bräter, Dosen, Gewürzsets und weitere nützliche Stücke für Haus und Ferienhaus." },
-      { slug: "decor", name: "Dekor und Vasen", image: "F129.jpg", description: "Wohnaccessoires, Vasen, Glocken und dekorative glasierte Keramik." },
-      { slug: "hospitality", name: "Für Restaurants und Gaststätten", image: "F255.jpg", description: "Robuste Keramik für Gastronomie und originelle Präsentation." },
-      { slug: "dining", name: "Speisesets", image: "F5.jpg", description: "Abgestimmte Sets für ein einheitliches Tischbild." }
+      { slug: "tea-sets", letter: "A", name: "Teesets", image: "F128.jpg", description: "Sets für ruhige Tischmomente, Teezeremonien und hochwertige Geschenke." },
+      { slug: "mugs", letter: "B", name: "Tassen", image: "F101.jpg", description: "Handgeformte Tassen für den Alltag und als beliebtes Geschenk." },
+      { slug: "aroma", letter: "C", name: "Aromalampen und Kerzenständer", image: "F24.jpg", description: "Keramik für Duft, Licht und wohnliche Atmosphäre." },
+      { slug: "others", letter: "D", name: "Sonstiges", image: "F165.jpg", description: "Ein vielfältiger Mix charakterstarker Stücke aus dem ursprünglichen Katalog." },
+      { slug: "gifts", letter: "E", name: "Geschenke", image: "F73.jpg", description: "Verspielte Keramikobjekte und kleine Stücke mit eigenem Charakter." },
+      { slug: "banks", letter: "F", name: "Spardosen und Aschenbecher", image: "F76.jpg", description: "Traditionelle und ungewöhnliche Formen aus dem ursprünglichen Katalog." },
+      { slug: "tableware", letter: "G", name: "Tischkeramik", image: "F120.jpg", description: "Servierkeramik und Zubehör für den täglichen Gebrauch." },
+      { slug: "small-objects", letter: "H", name: "Kleinigkeiten", image: "F107.jpg", description: "Kleine Keramikstücke als Geschenk, Detail oder dekorativer Akzent." },
+      { slug: "kitchen", letter: "I", name: "Küchenkeramik", image: "F145.jpg", description: "Bräter, Dosen, Gewürzsets und weitere nützliche Stücke für Haus und Ferienhaus." },
+      { slug: "for-him", letter: "J", name: "Für Herren", image: "F67.jpg", description: "Geschenk- und Gebrauchskeramik mit kräftigerem, markanterem Charakter." },
+      { slug: "for-her", letter: "K", name: "Für Damen", image: "F1.jpg", description: "Feinere Formen, Aromakeramik und dekorative Stücke zum Verschenken." },
+      { slug: "vases", letter: "L", name: "Vasen", image: "F129.jpg", description: "Glasierte Vasen und dekorative Gefäße für Innenräume und Arrangements." },
+      { slug: "hospitality", letter: "M", name: "Für Restaurants und Gaststätten", image: "F255.jpg", description: "Robuste Keramik für Gastronomie und originelle Präsentation." },
+      { slug: "dining", letter: "N", name: "Speisesets", image: "F5.jpg", description: "Abgestimmte Sets für ein einheitliches Tischbild." }
     ],
     glazeNames: [
       "Kaffee",
@@ -746,6 +792,25 @@ const pageKeys = {
   contact: "contact"
 };
 
+const galleryPageCounts = {
+  A: 5,
+  B: 9,
+  C: 6,
+  D: 2,
+  E: 3,
+  F: 3,
+  G: 3,
+  H: 4,
+  I: 4,
+  J: 4,
+  K: 3,
+  L: 3,
+  M: 10,
+  N: 2
+};
+
+const galleryCache = new Map();
+
 function absoluteUrl(locale, pageKey) {
   const localeData = locales[locale];
   const page = localeData.pages[pageKey];
@@ -776,6 +841,118 @@ function escapeHtml(value) {
     .replace(/"/g, "&quot;");
 }
 
+function decodeLegacyFile(filePath) {
+  const buffer = fs.readFileSync(filePath);
+  return new TextDecoder("windows-1250").decode(buffer);
+}
+
+function stripHtml(html) {
+  return html
+    .replace(/<br\s*\/?>/gi, " ")
+    .replace(/<\/?(?:font|b|i|em|strong|span|p)[^>]*>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function isGalleryCaption(text) {
+  if (!text) return false;
+  const blacklist = [
+    "zpět",
+    "další",
+    "back",
+    "next",
+    "weiter",
+    "zurück",
+    "hlavni",
+    "historie",
+    "index",
+    "wesentliches"
+  ];
+  return !blacklist.includes(text.toLowerCase());
+}
+
+function extractGalleryItemsFromHtml(html) {
+  const rows = [...html.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)].map((match) => match[1]);
+  const items = [];
+
+  for (let index = 0; index < rows.length; index += 1) {
+    const imageCells = [...rows[index].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)]
+      .map((match) => match[1])
+      .map((cell) => {
+        const imageMatch = cell.match(/<img[^>]+src="([^"]+)"/i);
+        return imageMatch ? imageMatch[1] : null;
+      })
+      .filter((src) => src && !src.toLowerCase().includes("spiral") && !src.toLowerCase().endsWith(".gif"));
+
+    if (!imageCells.length) continue;
+
+    const nextRow = rows[index + 1] ?? "";
+    const captions = [...nextRow.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)]
+      .map((match) => stripHtml(match[1]))
+      .filter(isGalleryCaption);
+
+    imageCells.forEach((image, imageIndex) => {
+      items.push({
+        image,
+        caption: captions[imageIndex] || ""
+      });
+    });
+  }
+
+  return items;
+}
+
+function localeGallerySuffix(locale) {
+  if (locale === "en") return "_eng";
+  if (locale === "de") return "_ger";
+  return "";
+}
+
+function getCategoryGallery(locale, category) {
+  const cacheKey = `${locale}:${category.letter}`;
+  if (galleryCache.has(cacheKey)) {
+    return galleryCache.get(cacheKey);
+  }
+
+  const suffix = localeGallerySuffix(locale);
+  const pages = [];
+  const items = [];
+
+  for (let pageNumber = 1; pageNumber <= galleryPageCounts[category.letter]; pageNumber += 1) {
+    const filePath = path.join(
+      rootDir,
+      "ftp-mirror/kerat.cz/kerat_cz",
+      `foto${category.letter}${pageNumber}${suffix}.htm`
+    );
+    if (!fs.existsSync(filePath)) continue;
+    const html = decodeLegacyFile(filePath);
+    pages.push(filePath);
+    items.push(...extractGalleryItemsFromHtml(html));
+  }
+
+  const uniqueItems = [];
+  const seen = new Set();
+  items.forEach((item) => {
+    const key = `${item.image}:${item.caption}`;
+    if (seen.has(key)) return;
+    seen.add(key);
+    uniqueItems.push(item);
+  });
+
+  const gallery = {
+    coverImage: uniqueItems[0]?.image || category.image,
+    itemCount: uniqueItems.length,
+    items: uniqueItems
+  };
+  galleryCache.set(cacheKey, gallery);
+  return gallery;
+}
+
 function pagePath(locale, pageKey) {
   const localeData = locales[locale];
   const slug = localeData.pages[pageKey].slug;
@@ -787,11 +964,23 @@ function pagePath(locale, pageKey) {
     : path.join(rootDir, localeData.pathPrefix, "index.html");
 }
 
+function categoryPagePath(locale, category) {
+  const localeData = locales[locale];
+  if (locale === "cs") {
+    return path.join(rootDir, localeData.pages.products.slug, category.slug, "index.html");
+  }
+  return path.join(rootDir, localeData.pathPrefix, localeData.pages.products.slug, category.slug, "index.html");
+}
+
 function depthFor(locale, pageKey) {
   if (locale === "cs") {
     return pageKey === "home" ? 0 : 1;
   }
   return pageKey === "home" ? 1 : 2;
+}
+
+function categoryDepth(locale) {
+  return locale === "cs" ? 2 : 3;
 }
 
 function navHref(locale, pageKey, currentDepth) {
@@ -802,6 +991,15 @@ function navHref(locale, pageKey, currentDepth) {
     return page.slug ? `${root}/${page.slug}/` : `${root}/`;
   }
   return page.slug ? `${root}/${localeData.pathPrefix}/${page.slug}/` : `${root}/${localeData.pathPrefix}/`;
+}
+
+function categoryHref(locale, category, currentDepth) {
+  const root = relativeRoot(currentDepth);
+  const localeData = locales[locale];
+  if (locale === "cs") {
+    return `${root}/${localeData.pages.products.slug}/${category.slug}/`;
+  }
+  return `${root}/${localeData.pathPrefix}/${localeData.pages.products.slug}/${category.slug}/`;
 }
 
 function localeHref(targetLocale, pageKey, currentDepth) {
@@ -918,17 +1116,23 @@ function renderHero(locale, currentDepth) {
 function renderCategories(locale, currentDepth, featured = false) {
   const t = locales[locale];
   const cards = t.categories
-    .map(
-      (category) => `
-        <article class="category-card">
-          <img src="${assetHref(category.image, currentDepth)}" alt="${escapeHtml(category.name)}" loading="lazy" decoding="async">
+    .map((category) => {
+      const gallery = getCategoryGallery(locale, category);
+      const countLabel = locale === "cs" ? "položek" : locale === "en" ? "items" : "Artikel";
+      return `
+        <a class="category-card category-card-link" href="${categoryHref(locale, category, currentDepth)}">
+          <img src="${assetHref(gallery.coverImage, currentDepth)}" alt="${escapeHtml(category.name)}" loading="lazy" decoding="async">
           <div class="category-card-body">
+            <div class="category-card-meta">
+              <span>${gallery.itemCount} ${countLabel}</span>
+              <span class="category-card-arrow">→</span>
+            </div>
             <h3>${escapeHtml(category.name)}</h3>
             <p>${escapeHtml(category.description)}</p>
           </div>
-        </article>
-      `
-    )
+        </a>
+      `;
+    })
     .join("");
 
   return `
@@ -949,6 +1153,58 @@ function renderCategories(locale, currentDepth, featured = false) {
         }
         <div class="category-grid">
           ${cards}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderCategoryGalleryPage(locale, category, currentDepth) {
+  const t = locales[locale];
+  const gallery = getCategoryGallery(locale, category);
+  const breadcrumbLabels = t.labels.breadcrumbs;
+  const countLabel = locale === "cs" ? "položek v galerii" : locale === "en" ? "items in the gallery" : "Artikel in der Galerie";
+  const breadcrumb = `
+    <section class="breadcrumb-bar">
+      <div class="shell breadcrumbs">
+        <a href="${navHref(locale, "home", currentDepth)}">${breadcrumbLabels.home}</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="${navHref(locale, "products", currentDepth)}">${breadcrumbLabels.products}</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>${escapeHtml(category.name)}</span>
+      </div>
+    </section>
+  `;
+
+  const items = gallery.items
+    .map(
+      (item) => `
+        <article class="product-card">
+          <img src="${assetHref(item.image, currentDepth)}" alt="${escapeHtml(item.caption || category.name)}" loading="lazy" decoding="async">
+          <div class="product-card-body">
+            <p>${escapeHtml(item.caption || category.name)}</p>
+          </div>
+        </article>
+      `
+    )
+    .join("");
+
+  return `
+    ${breadcrumb}
+    <section class="section">
+      <div class="shell category-detail">
+        <div class="section-heading narrow">
+          <p class="eyebrow">${escapeHtml(t.nav.products)}</p>
+          <h1>${escapeHtml(category.name)}</h1>
+          <p>${escapeHtml(category.description)}</p>
+          <p class="category-detail-meta">${gallery.itemCount} ${countLabel}</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="${shopUrl}" target="_blank" rel="noreferrer">${escapeHtml(t.ctas.primary)}</a>
+            <a class="button button-secondary" href="${navHref(locale, "contact", currentDepth)}">${escapeHtml(t.ctas.secondary)}</a>
+          </div>
+        </div>
+        <div class="product-gallery">
+          ${items}
         </div>
       </div>
     </section>
@@ -1272,6 +1528,52 @@ function buildStructuredData(locale, pageKey) {
   return scripts.join("\n    ");
 }
 
+function buildCategoryStructuredData(locale, category) {
+  const pageUrl = absoluteCategoryUrl(locale, category);
+  const breadcrumbList = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: locales[locale].labels.breadcrumbs.home,
+        item: absoluteUrl(locale, "home")
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: locales[locale].labels.breadcrumbs.products,
+        item: absoluteUrl(locale, "products")
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: category.name,
+        item: pageUrl
+      }
+    ]
+  };
+
+  return `
+    <script type="application/ld+json">${JSON.stringify(breadcrumbList)}</script>
+    <script type="application/ld+json">${JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: category.name,
+      url: pageUrl
+    })}</script>
+  `;
+}
+
+function absoluteCategoryUrl(locale, category) {
+  const localeData = locales[locale];
+  if (locale === "cs") {
+    return `${siteUrl}/${localeData.pages.products.slug}/${category.slug}/`;
+  }
+  return `${siteUrl}/${localeData.pathPrefix}/${localeData.pages.products.slug}/${category.slug}/`;
+}
+
 function renderPage(locale, pageKey) {
   const localeData = locales[locale];
   const page = localeData.pages[pageKey];
@@ -1327,6 +1629,49 @@ function renderPage(locale, pageKey) {
 `;
 }
 
+function renderCategoryPage(locale, category) {
+  const localeData = locales[locale];
+  const depth = categoryDepth(locale);
+  const root = relativeRoot(depth);
+  const pageTitle = `${category.name} | ${localeData.siteName}`;
+  const pageDescription = category.description;
+  const ogImage = `${siteUrl}${assetUrl(getCategoryGallery(locale, category).coverImage)}`;
+  const alternateLinks = [
+    `<link rel="alternate" hreflang="x-default" href="${absoluteCategoryUrl("cs", locales.cs.categories.find((item) => item.slug === category.slug))}">`,
+    ...Object.keys(locales).map((code) => {
+      const localizedCategory = locales[code].categories.find((item) => item.slug === category.slug);
+      return `<link rel="alternate" hreflang="${locales[code].lang}" href="${absoluteCategoryUrl(code, localizedCategory)}">`;
+    })
+  ].join("\n");
+
+  return `<!doctype html>
+<html lang="${localeData.lang}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>${escapeHtml(pageTitle)}</title>
+    <meta name="description" content="${escapeHtml(pageDescription)}">
+    <link rel="canonical" href="${absoluteCategoryUrl(locale, category)}">
+    ${alternateLinks}
+    <link rel="stylesheet" href="${root}/assets/styles.css">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="${escapeHtml(pageTitle)}">
+    <meta property="og:description" content="${escapeHtml(pageDescription)}">
+    <meta property="og:url" content="${absoluteCategoryUrl(locale, category)}">
+    <meta property="og:image" content="${ogImage}">
+    ${buildCategoryStructuredData(locale, category)}
+  </head>
+  <body>
+    ${renderHeader(locale, "products", depth)}
+    <main>
+      ${renderCategoryGalleryPage(locale, category, depth)}
+    </main>
+    ${renderFooter(locale, depth)}
+  </body>
+</html>
+`;
+}
+
 function ensureDir(filePath) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
 }
@@ -1344,6 +1689,11 @@ for (const locale of Object.keys(locales)) {
     writeFile(filePath, renderPage(locale, pageKey));
     outputFiles.push(filePath);
   }
+  for (const category of locales[locale].categories) {
+    const filePath = categoryPagePath(locale, category);
+    writeFile(filePath, renderCategoryPage(locale, category));
+    outputFiles.push(filePath);
+  }
 }
 
 const sitemapEntries = [];
@@ -1351,6 +1701,11 @@ for (const locale of Object.keys(locales)) {
   for (const pageKey of pageOrder) {
     sitemapEntries.push(
       `  <url>\n    <loc>${absoluteUrl(locale, pageKey)}</loc>\n    <lastmod>${buildDate}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${pageKey === "home" ? "1.0" : "0.8"}</priority>\n  </url>`
+    );
+  }
+  for (const category of locales[locale].categories) {
+    sitemapEntries.push(
+      `  <url>\n    <loc>${absoluteCategoryUrl(locale, category)}</loc>\n    <lastmod>${buildDate}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.7</priority>\n  </url>`
     );
   }
 }
