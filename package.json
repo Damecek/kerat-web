@@ -2,6 +2,8 @@
   "name": "kerat-web",
   "private": true,
   "scripts": {
-    "build": "node scripts/build-site.mjs"
+    "build": "node scripts/build-site.mjs",
+    "build:pages": "node scripts/build-site.mjs",
+    "migrate:legacy": "node scripts/migrate-legacy-content.mjs"
   }
 }

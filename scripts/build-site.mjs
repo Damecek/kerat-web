@@ -2,10 +2,36 @@ import fs from "node:fs";
 import path from "node:path";
 
 const rootDir = path.resolve(process.cwd());
-const assetBase = "/ftp-mirror/kerat.cz/kerat_cz";
 const shopUrl = "https://www.fler.cz/kerat-keramika";
-const siteUrl = "https://www.kerat.cz";
+const defaultSiteUrl = "https://www.kerat.cz";
 const buildDate = "2026-03-24";
+const outputDir = path.join(rootDir, process.env.OUTPUT_DIR || "dist");
+const sourceAssetsDir = path.join(rootDir, "src/assets");
+const galleryData = JSON.parse(
+  fs.readFileSync(path.join(rootDir, "src/data/gallery-data.json"), "utf8")
+);
+
+function normalizeSiteUrl(value) {
+  return (value || defaultSiteUrl).replace(/\/+$/, "");
+}
+
+function normalizeBasePath(value) {
+  if (!value) return "";
+  const trimmed = value.trim();
+  if (!trimmed || trimmed === "/") return "";
+  return `/${trimmed.replace(/^\/+|\/+$/g, "")}`;
+}
+
+const siteConfig = {
+  siteUrl: normalizeSiteUrl(process.env.SITE_URL),
+  basePath: normalizeBasePath(process.env.BASE_PATH),
+  cname: (process.env.CNAME || "").trim()
+};
+
+function absoluteSiteUrl(relativePath = "/") {
+  const normalizedPath = relativePath === "/" ? "/" : `/${relativePath.replace(/^\/+/, "")}`;
+  return `${siteConfig.siteUrl}${siteConfig.basePath}${normalizedPath}`;
+}
 
 const contact = {
   company: "KERAT Keramika",
@@ -792,33 +818,16 @@ const pageKeys = {
   contact: "contact"
 };
 
-const galleryPageCounts = {
-  A: 5,
-  B: 9,
-  C: 6,
-  D: 2,
-  E: 3,
-  F: 3,
-  G: 3,
-  H: 4,
-  I: 4,
-  J: 4,
-  K: 3,
-  L: 3,
-  M: 10,
-  N: 2
-};
-
 const galleryCache = new Map();
 
 function absoluteUrl(locale, pageKey) {
   const localeData = locales[locale];
   const page = localeData.pages[pageKey];
   if (locale === "cs") {
-    return page.slug ? `${siteUrl}/${page.slug}/` : `${siteUrl}/`;
+    return page.slug ? absoluteSiteUrl(`/${page.slug}/`) : absoluteSiteUrl("/");
   }
-  const prefix = `${siteUrl}/${localeData.pathPrefix}`;
-  return page.slug ? `${prefix}/${page.slug}/` : `${prefix}/`;
+  const prefix = `/${localeData.pathPrefix}`;
+  return page.slug ? absoluteSiteUrl(`${prefix}/${page.slug}/`) : absoluteSiteUrl(`${prefix}/`);
 }
 
 function relativeRoot(depth) {
@@ -826,11 +835,11 @@ function relativeRoot(depth) {
 }
 
 function assetUrl(fileName) {
-  return `${assetBase}/${fileName}`;
+  return `/assets/media/${fileName}`;
 }
 
 function assetHref(fileName, depth) {
-  return `${relativeRoot(depth)}/${assetBase.replace(/^\//, "")}/${fileName}`;
+  return `${relativeRoot(depth)}/assets/media/${fileName}`;
 }
 
 function escapeHtml(value) {
@@ -841,113 +850,16 @@ function escapeHtml(value) {
     .replace(/"/g, "&quot;");
 }
 
-function decodeLegacyFile(filePath) {
-  const buffer = fs.readFileSync(filePath);
-  return new TextDecoder("windows-1250").decode(buffer);
-}
-
-function stripHtml(html) {
-  return html
-    .replace(/<br\s*\/?>/gi, " ")
-    .replace(/<\/?(?:font|b|i|em|strong|span|p)[^>]*>/gi, " ")
-    .replace(/<[^>]+>/g, " ")
-    .replace(/&nbsp;/gi, " ")
-    .replace(/&amp;/gi, "&")
-    .replace(/&quot;/gi, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function isGalleryCaption(text) {
-  if (!text) return false;
-  const blacklist = [
-    "zpět",
-    "další",
-    "back",
-    "next",
-    "weiter",
-    "zurück",
-    "hlavni",
-    "historie",
-    "index",
-    "wesentliches"
-  ];
-  return !blacklist.includes(text.toLowerCase());
-}
-
-function extractGalleryItemsFromHtml(html) {
-  const rows = [...html.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)].map((match) => match[1]);
-  const items = [];
-
-  for (let index = 0; index < rows.length; index += 1) {
-    const imageCells = [...rows[index].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)]
-      .map((match) => match[1])
-      .map((cell) => {
-        const imageMatch = cell.match(/<img[^>]+src="([^"]+)"/i);
-        return imageMatch ? imageMatch[1] : null;
-      })
-      .filter((src) => src && !src.toLowerCase().includes("spiral") && !src.toLowerCase().endsWith(".gif"));
-
-    if (!imageCells.length) continue;
-
-    const nextRow = rows[index + 1] ?? "";
-    const captions = [...nextRow.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)]
-      .map((match) => stripHtml(match[1]))
-      .filter(isGalleryCaption);
-
-    imageCells.forEach((image, imageIndex) => {
-      items.push({
-        image,
-        caption: captions[imageIndex] || ""
-      });
-    });
-  }
-
-  return items;
-}
-
-function localeGallerySuffix(locale) {
-  if (locale === "en") return "_eng";
-  if (locale === "de") return "_ger";
-  return "";
-}
-
 function getCategoryGallery(locale, category) {
   const cacheKey = `${locale}:${category.letter}`;
   if (galleryCache.has(cacheKey)) {
     return galleryCache.get(cacheKey);
   }
-
-  const suffix = localeGallerySuffix(locale);
-  const pages = [];
-  const items = [];
-
-  for (let pageNumber = 1; pageNumber <= galleryPageCounts[category.letter]; pageNumber += 1) {
-    const filePath = path.join(
-      rootDir,
-      "ftp-mirror/kerat.cz/kerat_cz",
-      `foto${category.letter}${pageNumber}${suffix}.htm`
-    );
-    if (!fs.existsSync(filePath)) continue;
-    const html = decodeLegacyFile(filePath);
-    pages.push(filePath);
-    items.push(...extractGalleryItemsFromHtml(html));
-  }
-
-  const uniqueItems = [];
-  const seen = new Set();
-  items.forEach((item) => {
-    const key = `${item.image}:${item.caption}`;
-    if (seen.has(key)) return;
-    seen.add(key);
-    uniqueItems.push(item);
-  });
-
+  const localeGallery = galleryData[locale]?.[category.letter];
   const gallery = {
-    coverImage: uniqueItems[0]?.image || category.image,
-    itemCount: uniqueItems.length,
-    items: uniqueItems
+    coverImage: localeGallery?.coverImage || category.image,
+    itemCount: localeGallery?.itemCount || 0,
+    items: localeGallery?.items || []
   };
   galleryCache.set(cacheKey, gallery);
   return gallery;
@@ -957,19 +869,19 @@ function pagePath(locale, pageKey) {
   const localeData = locales[locale];
   const slug = localeData.pages[pageKey].slug;
   if (locale === "cs") {
-    return slug ? path.join(rootDir, slug, "index.html") : path.join(rootDir, "index.html");
+    return slug ? path.join(outputDir, slug, "index.html") : path.join(outputDir, "index.html");
   }
   return slug
-    ? path.join(rootDir, localeData.pathPrefix, slug, "index.html")
-    : path.join(rootDir, localeData.pathPrefix, "index.html");
+    ? path.join(outputDir, localeData.pathPrefix, slug, "index.html")
+    : path.join(outputDir, localeData.pathPrefix, "index.html");
 }
 
 function categoryPagePath(locale, category) {
   const localeData = locales[locale];
   if (locale === "cs") {
-    return path.join(rootDir, localeData.pages.products.slug, category.slug, "index.html");
+    return path.join(outputDir, localeData.pages.products.slug, category.slug, "index.html");
   }
-  return path.join(rootDir, localeData.pathPrefix, localeData.pages.products.slug, category.slug, "index.html");
+  return path.join(outputDir, localeData.pathPrefix, localeData.pages.products.slug, category.slug, "index.html");
 }
 
 function depthFor(locale, pageKey) {
@@ -1473,9 +1385,9 @@ function buildStructuredData(locale, pageKey) {
     "@type": ["Store", "ArtGallery"],
     name: contact.company,
     image: [
-      `${siteUrl}${assetUrl("srdce_dvojak_hrnek.jpeg")}`,
-      `${siteUrl}${assetUrl("dilna1.jpg")}`,
-      `${siteUrl}${assetUrl("vzorkovna1.jpg")}`
+      absoluteSiteUrl(assetUrl("srdce_dvojak_hrnek.jpeg")),
+      absoluteSiteUrl(assetUrl("dilna1.jpg")),
+      absoluteSiteUrl(assetUrl("vzorkovna1.jpg"))
     ],
     url: absoluteUrl(locale, "home"),
     telephone: contact.phoneDisplay,
@@ -1569,9 +1481,9 @@ function buildCategoryStructuredData(locale, category) {
 function absoluteCategoryUrl(locale, category) {
   const localeData = locales[locale];
   if (locale === "cs") {
-    return `${siteUrl}/${localeData.pages.products.slug}/${category.slug}/`;
+    return absoluteSiteUrl(`/${localeData.pages.products.slug}/${category.slug}/`);
   }
-  return `${siteUrl}/${localeData.pathPrefix}/${localeData.pages.products.slug}/${category.slug}/`;
+  return absoluteSiteUrl(`/${localeData.pathPrefix}/${localeData.pages.products.slug}/${category.slug}/`);
 }
 
 function renderPage(locale, pageKey) {
@@ -1579,7 +1491,7 @@ function renderPage(locale, pageKey) {
   const page = localeData.pages[pageKey];
   const depth = depthFor(locale, pageKey);
   const root = relativeRoot(depth);
-  const ogImage = `${siteUrl}${assetUrl("srdce_dvojak_hrnek.jpeg")}`;
+  const ogImage = absoluteSiteUrl(assetUrl("srdce_dvojak_hrnek.jpeg"));
   const alternateLinks = [
     `<link rel="alternate" hreflang="x-default" href="${absoluteUrl("cs", pageKey)}">`,
     ...Object.keys(locales).map(
@@ -1635,7 +1547,7 @@ function renderCategoryPage(locale, category) {
   const root = relativeRoot(depth);
   const pageTitle = `${category.name} | ${localeData.siteName}`;
   const pageDescription = category.description;
-  const ogImage = `${siteUrl}${assetUrl(getCategoryGallery(locale, category).coverImage)}`;
+  const ogImage = absoluteSiteUrl(assetUrl(getCategoryGallery(locale, category).coverImage));
   const alternateLinks = [
     `<link rel="alternate" hreflang="x-default" href="${absoluteCategoryUrl("cs", locales.cs.categories.find((item) => item.slug === category.slug))}">`,
     ...Object.keys(locales).map((code) => {
@@ -1681,6 +1593,71 @@ function writeFile(filePath, content) {
   fs.writeFileSync(filePath, content, "utf8");
 }
 
+function removeDir(dirPath) {
+  fs.rmSync(dirPath, { recursive: true, force: true });
+}
+
+function copyDir(sourceDir, targetDir) {
+  fs.mkdirSync(targetDir, { recursive: true });
+  for (const entry of fs.readdirSync(sourceDir, { withFileTypes: true })) {
+    const sourcePath = path.join(sourceDir, entry.name);
+    const targetPath = path.join(targetDir, entry.name);
+    if (entry.isDirectory()) {
+      copyDir(sourcePath, targetPath);
+      continue;
+    }
+    fs.copyFileSync(sourcePath, targetPath);
+  }
+}
+
+function renderNotFoundPage() {
+  const root = ".";
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Page not found | KERAT</title>
+    <meta name="description" content="The requested KERAT page could not be found.">
+    <link rel="stylesheet" href="${root}/assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="./">
+          <span class="brand-mark">K</span>
+          <span class="brand-copy">
+            <span class="brand-name">KERAT</span>
+            <span class="brand-tag">Handmade pottery from Prague</span>
+          </span>
+        </a>
+      </div>
+    </header>
+    <main>
+      <section class="section">
+        <div class="shell">
+          <div class="section-heading narrow">
+            <p class="eyebrow">404</p>
+            <h1>Page not found</h1>
+            <p>The page may have moved or no longer exists. Continue with the main presentation or switch to another language.</p>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="./">Czech homepage</a>
+            <a class="button button-secondary" href="./en/">English homepage</a>
+            <a class="button button-secondary" href="./de/">German homepage</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+`;
+}
+
+removeDir(outputDir);
+copyDir(sourceAssetsDir, path.join(outputDir, "assets"));
+
 const outputFiles = [];
 
 for (const locale of Object.keys(locales)) {
@@ -1711,15 +1688,22 @@ for (const locale of Object.keys(locales)) {
 }
 
 writeFile(
-  path.join(rootDir, "sitemap.xml"),
+  path.join(outputDir, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapEntries.join(
     "\n"
   )}\n</urlset>\n`
 );
 
 writeFile(
-  path.join(rootDir, "robots.txt"),
-  `User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}/sitemap.xml\n`
+  path.join(outputDir, "robots.txt"),
+  `User-agent: *\nAllow: /\n\nSitemap: ${absoluteSiteUrl("/sitemap.xml")}\n`
 );
 
-console.log(`Generated ${outputFiles.length} HTML files plus sitemap.xml and robots.txt`);
+writeFile(path.join(outputDir, "404.html"), renderNotFoundPage());
+writeFile(path.join(outputDir, ".nojekyll"), "");
+
+if (siteConfig.cname) {
+  writeFile(path.join(outputDir, "CNAME"), `${siteConfig.cname}\n`);
+}
+
+console.log(`Generated ${outputFiles.length} HTML files plus sitemap.xml, robots.txt and 404.html in ${outputDir}`);
