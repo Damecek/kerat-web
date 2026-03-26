@@ -1430,6 +1430,15 @@ function buildStructuredData(locale, pageKey) {
   ];
 
   if (pageKey === "home") {
+    const websiteSchema = {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: locales[locale].siteName,
+      url: absoluteUrl(locale, "home"),
+      inLanguage: locales[locale].lang
+    };
+    scripts.push(`<script type="application/ld+json">${JSON.stringify(websiteSchema)}</script>`);
+
     const faqData = locales[locale].faq;
     const faqSchema = {
       "@context": "https://schema.org",
