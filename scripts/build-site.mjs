@@ -44,8 +44,7 @@ const contact = {
   phoneHref: "tel:+420602376670",
   emailPrimary: "stepanek@kerat.cz",
   emailSecondary: "kerat@kerat.cz",
-  openingHours: "Mon-Fri 08:00-17:00, evenings and weekends by arrangement",
-  legacyHours: "Pondělí až pátek 8:00-17:00, večer a víkend po dohodě."
+  openingHours: "Mon-Fri 08:00-17:00, evenings and weekends by arrangement"
 };
 
 const glazeShared = [
@@ -112,6 +111,7 @@ const locales = {
     pathPrefix: "",
     homeSlug: "",
     siteName: "KERAT Keramika",
+    openingHoursDisplay: "Pondělí až pátek 8:00–17:00, večer a víkend po dohodě.",
     shopLabel: "Přejít do obchodu",
     contactLabel: "Napsat e-mail",
     nav: {
@@ -408,6 +408,7 @@ const locales = {
     pathPrefix: "en",
     homeSlug: "en",
     siteName: "KERAT Pottery",
+    openingHoursDisplay: "Monday to Friday 08:00–17:00, evenings and weekends by arrangement.",
     shopLabel: "Visit the shop",
     contactLabel: "Send an email",
     nav: {
@@ -611,6 +612,7 @@ const locales = {
     pathPrefix: "de",
     homeSlug: "de",
     siteName: "KERAT Keramik",
+    openingHoursDisplay: "Montag bis Freitag 08:00–17:00, abends und am Wochenende nach Vereinbarung.",
     shopLabel: "Zum Shop",
     contactLabel: "E-Mail senden",
     nav: {
@@ -980,7 +982,7 @@ function renderFooter(locale, currentDepth) {
         </div>
         <div>
           <h2>${escapeHtml(t.nav.contact)}</h2>
-          <p>${escapeHtml(contact.legacyHours)}</p>
+          <p>${escapeHtml(t.openingHoursDisplay)}</p>
           <p><a href="${shopUrl}" target="_blank" rel="noreferrer">${escapeHtml(t.ctas.primary)}</a></p>
         </div>
         <div>
@@ -1279,7 +1281,7 @@ function renderContact(locale, asPage = false, currentDepth = 0) {
           </div>
           <div class="contact-card">
             <h2>${escapeHtml(t.homeSections.storyTitle)}</h2>
-            <p>${escapeHtml(contact.legacyHours)}</p>
+            <p>${escapeHtml(t.openingHoursDisplay)}</p>
             <p><span class="map-placeholder">Praha 6 Dejvice</span></p>
             <div class="contact-actions">
               <a class="button button-primary" href="${shopUrl}" target="_blank" rel="noreferrer">${escapeHtml(t.ctas.primary)}</a>
