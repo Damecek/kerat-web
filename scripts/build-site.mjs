@@ -1695,12 +1695,12 @@ const sitemapEntries = [];
 for (const locale of Object.keys(locales)) {
   for (const pageKey of pageOrder) {
     sitemapEntries.push(
-      `  <url>\n    <loc>${absoluteUrl(locale, pageKey)}</loc>\n    <lastmod>${buildDate}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${pageKey === "home" ? "1.0" : "0.8"}</priority>\n  </url>`
+      `  <url>\n    <loc>${absoluteUrl(locale, pageKey)}</loc>\n    <lastmod>${buildDate}</lastmod>\n  </url>`
     );
   }
   for (const category of locales[locale].categories) {
     sitemapEntries.push(
-      `  <url>\n    <loc>${absoluteCategoryUrl(locale, category)}</loc>\n    <lastmod>${buildDate}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.7</priority>\n  </url>`
+      `  <url>\n    <loc>${absoluteCategoryUrl(locale, category)}</loc>\n    <lastmod>${buildDate}</lastmod>\n  </url>`
     );
   }
 }
