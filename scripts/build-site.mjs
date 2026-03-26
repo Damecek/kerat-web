@@ -1720,6 +1720,42 @@ writeFile(
 writeFile(path.join(outputDir, "404.html"), renderNotFoundPage());
 writeFile(path.join(outputDir, ".nojekyll"), "");
 
+const llmsTxt = `# KERAT Keramika
+
+KERAT Keramika is a family-owned artisan pottery workshop located in Prague 6 Dejvice, Czech Republic. The Štěpánek family has been practising the ceramics craft since the 18th century. The current workshop and showroom at Stavitelská 6/1099 was established in 1991 by Petr Štěpánek, who has been running the atelier and training apprentices since 1993. All products are handmade and double-fired at 1140–1160 °C, resulting in high-density stoneware suitable for everyday use and commercial environments.
+
+## Key facts
+
+- Founder: Petr Štěpánek
+- Founded: 1991 (family craft tradition since the 18th century)
+- Address: Stavitelská 6/1099, Praha 6 Dejvice, 160 00, Czech Republic
+- Phone: +420 602 376 670
+- Email: stepanek@kerat.cz, kerat@kerat.cz
+- Opening hours: Monday–Friday 08:00–17:00; evenings and weekends by appointment
+- Products: 270+ original handmade ceramic items across 14 categories
+- Glazes: 40 glaze options; 12 stocked (nos. 1, 2, 3, 4, 14, 17, 30, 35, 36, 37, 38, 39); 28 made to order
+- Firing temperature: 1140–1160 °C (high-fire stoneware)
+- Online shop: https://www.fler.cz/kerat-keramika
+- Custom production: available (corporate logos, promotional ceramics, restaurant sets)
+
+## Main pages
+
+- Homepage (Czech): ${absoluteSiteUrl("/")}
+- Homepage (English): ${absoluteSiteUrl("/en/")}
+- Homepage (German): ${absoluteSiteUrl("/de/")}
+- Products (Czech): ${absoluteSiteUrl("/sortiment/")}
+- Glazes (Czech): ${absoluteSiteUrl("/glazury/")}
+- About (Czech): ${absoluteSiteUrl("/o-nas/")}
+- Contact: ${absoluteSiteUrl("/kontakt/")}
+- Story (English): ${absoluteSiteUrl("/en/story/")}
+- Products (English): ${absoluteSiteUrl("/en/products/")}
+
+## Permissions
+
+This site welcomes crawling and citation by AI systems for informational and commercial search purposes.
+`;
+writeFile(path.join(outputDir, "llms.txt"), llmsTxt);
+
 if (siteConfig.cname) {
   writeFile(path.join(outputDir, "CNAME"), `${siteConfig.cname}\n`);
 }
