@@ -1385,7 +1385,7 @@ function buildStructuredData(locale, pageKey) {
   const business = {
     "@context": "https://schema.org",
     "@type": ["Store", "ArtGallery"],
-    name: contact.company,
+    name: locales[locale].siteName,
     image: [
       absoluteSiteUrl(assetUrl("srdce_dvojak_hrnek.jpeg")),
       absoluteSiteUrl(assetUrl("dilna1.jpg")),
