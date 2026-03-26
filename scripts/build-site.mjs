@@ -1593,12 +1593,14 @@ function renderCategoryPage(locale, category) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index,follow">
     <title>${escapeHtml(pageTitle)}</title>
     <meta name="description" content="${escapeHtml(pageDescription)}">
     <link rel="canonical" href="${absoluteCategoryUrl(locale, category)}">
     ${alternateLinks}
     <link rel="stylesheet" href="${root}/assets/styles.css">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="${localeData.lang.replace("-", "_")}">
     <meta property="og:title" content="${escapeHtml(pageTitle)}">
     <meta property="og:description" content="${escapeHtml(pageDescription)}">
     <meta property="og:url" content="${absoluteCategoryUrl(locale, category)}">
