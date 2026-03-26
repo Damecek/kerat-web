@@ -1714,7 +1714,7 @@ writeFile(
 
 writeFile(
   path.join(outputDir, "robots.txt"),
-  `User-agent: *\nAllow: /\n\nSitemap: ${absoluteSiteUrl("/sitemap.xml")}\n`
+  `User-agent: *\nAllow: /\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nSitemap: ${absoluteSiteUrl("/sitemap.xml")}\n`
 );
 
 writeFile(path.join(outputDir, "404.html"), renderNotFoundPage());
