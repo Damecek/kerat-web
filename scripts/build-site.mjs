@@ -1392,8 +1392,8 @@ function buildStructuredData(locale, pageKey) {
       absoluteSiteUrl(assetUrl("vzorkovna1.jpg"))
     ],
     url: absoluteUrl(locale, "home"),
-    telephone: contact.phoneDisplay,
-    email: contact.emailPrimary,
+    telephone: contact.phoneHref.replace("tel:", ""),
+    email: [contact.emailPrimary, contact.emailSecondary],
     priceRange: "€€",
     currenciesAccepted: "CZK, EUR",
     paymentAccepted: "Cash, Credit Card",
