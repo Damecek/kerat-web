@@ -938,8 +938,22 @@ function renderLocaleSwitcher(locale, pageKey, currentDepth) {
     .join("");
 }
 
-function renderHeader(locale, pageKey, currentDepth) {
+function renderCategoryLocaleSwitcher(locale, category, currentDepth) {
+  return Object.keys(locales)
+    .map((code) => {
+      const active = code === locale ? ' aria-current="true"' : "";
+      const targetCategory = locales[code].categories.find((c) => c.slug === category.slug);
+      const href = targetCategory ? categoryHref(code, targetCategory, currentDepth) : localeHref(code, "products", currentDepth);
+      return `<a class="locale-chip"${active} href="${href}">${locales[code].localeLabel}</a>`;
+    })
+    .join("");
+}
+
+function renderHeader(locale, pageKey, currentDepth, category = null) {
   const t = locales[locale];
+  const localeSwitcherHtml = category
+    ? renderCategoryLocaleSwitcher(locale, category, currentDepth)
+    : renderLocaleSwitcher(locale, pageKey, currentDepth);
   return `
     <header class="site-header">
       <div class="shell header-inner">
@@ -960,7 +974,7 @@ function renderHeader(locale, pageKey, currentDepth) {
         </nav>
         <div class="header-actions">
           <div class="locale-switcher" aria-label="${escapeHtml(t.labels.localeSwitch)}">
-            ${renderLocaleSwitcher(locale, pageKey, currentDepth)}
+            ${localeSwitcherHtml}
           </div>
           <a class="button button-primary button-small" href="${shopUrl}" target="_blank" rel="noreferrer">${escapeHtml(t.shopLabel)}</a>
         </div>
@@ -1592,7 +1606,7 @@ function renderCategoryPage(locale, category) {
     ${buildCategoryStructuredData(locale, category)}
   </head>
   <body>
-    ${renderHeader(locale, "products", depth)}
+    ${renderHeader(locale, "products", depth, category)}
     <main>
       ${renderCategoryGalleryPage(locale, category, depth)}
     </main>
