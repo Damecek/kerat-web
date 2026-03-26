@@ -1425,7 +1425,7 @@ function buildStructuredData(locale, pageKey) {
   };
 
   const scripts = [
-    `<script type="application/ld+json">${JSON.stringify(breadcrumbList)}</script>`,
+    ...(pageKey !== "home" ? [`<script type="application/ld+json">${JSON.stringify(breadcrumbList)}</script>`] : []),
     `<script type="application/ld+json">${JSON.stringify(business)}</script>`
   ];
 
