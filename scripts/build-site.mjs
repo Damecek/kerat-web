@@ -1384,7 +1384,9 @@ function buildStructuredData(locale, pageKey) {
 
   const business = {
     "@context": "https://schema.org",
-    "@type": ["Store", "ArtGallery"],
+    "@type": "Store",
+    "@id": `${absoluteUrl(locale, "home")}#business`,
+    additionalType: "https://www.wikidata.org/wiki/Q1969826",
     name: locales[locale].siteName,
     image: [
       absoluteSiteUrl(assetUrl("srdce_dvojak_hrnek.jpeg")),
@@ -1397,8 +1399,13 @@ function buildStructuredData(locale, pageKey) {
     priceRange: "€€",
     currenciesAccepted: "CZK, EUR",
     paymentAccepted: "Cash, Credit Card",
-    hasMap: "https://maps.google.com/?q=Stavitelská+6,+Praha+6+Dejvice",
+    hasMap: "https://www.google.com/maps/search/?api=1&query=Stavitelská+6%2F1099%2C+Praha+6+Dejvice",
     description: locales[locale].story.intro,
+    foundingDate: "1991",
+    founder: {
+      "@type": "Person",
+      name: contact.person
+    },
     address: {
       "@type": "PostalAddress",
       streetAddress: contact.street,
