@@ -2,3 +2,4 @@
 dist/
 ftp-mirror/
 .idea
+node_modules/
