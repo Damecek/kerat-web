@@ -635,7 +635,7 @@ h3 {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.25rem;
 }
 
@@ -646,6 +646,44 @@ h3 {
 
 .footer-locales {
   margin-top: 1rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: var(--surface, #f0e8de);
+  color: var(--accent);
+  transition: background 0.18s, color 0.18s, transform 0.18s;
+  text-decoration: none;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.social-link svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.social-link--shop svg {
+  width: 1.1rem;
+  height: 1.1rem;
 }
 
 @media (max-width: 1040px) {

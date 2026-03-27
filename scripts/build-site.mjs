@@ -4,6 +4,10 @@ import sharp from "sharp";
 
 const rootDir = path.resolve(process.cwd());
 const shopUrl = "https://www.fler.cz/kerat-keramika";
+const keramikashopUrl = "https://www.keramikashop.cz/";
+const instagramUrl = "https://www.instagram.com/keramika_kerat/";
+const facebookUrl = "https://www.facebook.com/keramika.kerat/";
+const youtubeUrl = "https://www.youtube.com/channel/UCx1IW9tDGyTFEnl3Cp1wZww";
 const defaultSiteUrl = "https://www.kerat.cz";
 const buildDate = new Date().toISOString().slice(0, 10);
 const outputDir = path.join(rootDir, process.env.OUTPUT_DIR || "dist");
@@ -1028,11 +1032,29 @@ function renderFooter(locale, currentDepth) {
         <div>
           <h2>${escapeHtml(t.nav.contact)}</h2>
           <p>${escapeHtml(t.openingHoursDisplay)}</p>
-          <p><a href="${shopUrl}" target="_blank" rel="noreferrer">${escapeHtml(t.ctas.primary)}</a></p>
+          <p><a href="${keramikashopUrl}" target="_blank" rel="noreferrer noopener">${escapeHtml(t.ctas.primary)}</a></p>
+          <p><a href="${shopUrl}" target="_blank" rel="noreferrer noopener">Fler.cz</a></p>
         </div>
         <div>
           <h2>${escapeHtml(t.labels.localeSwitch)}</h2>
           <div class="locale-switcher footer-locales">${renderLocaleSwitcher(locale, "home", currentDepth)}</div>
+        </div>
+        <div>
+          <h2>Sledujte nás</h2>
+          <div class="footer-social">
+            <a href="${instagramUrl}" class="social-link" target="_blank" rel="noreferrer noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="${facebookUrl}" class="social-link" target="_blank" rel="noreferrer noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="${youtubeUrl}" class="social-link" target="_blank" rel="noreferrer noopener" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58a2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" stroke="none" fill="currentColor"/></svg>
+            </a>
+            <a href="${keramikashopUrl}" class="social-link social-link--shop" target="_blank" rel="noreferrer noopener" aria-label="Keramikashop.cz">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
@@ -1458,7 +1480,7 @@ function buildStructuredData(locale, pageKey) {
       postalCode: contact.postalCode,
       addressCountry: contact.country
     },
-    sameAs: [shopUrl],
+    sameAs: [shopUrl, keramikashopUrl, instagramUrl, facebookUrl, youtubeUrl],
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
