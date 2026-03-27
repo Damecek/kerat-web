@@ -331,23 +331,27 @@ const locales = {
     ],
     glazeCopy: {
       title: "40 glazur, 12 skladových favoritů",
-      lead: "Barevné možnosti jsou součástí identity značky KERAT. Celý sortiment lze objednat v lesklých, matných i kombinovaných glazurách."
+      lead: "Barevné možnosti jsou součástí identity značky KERAT. Celý sortiment vyrábíme ve 40 různých glazurách – v lesklých, matných i kombinovaných variantách. Glazury se vypalují při teplotách 1140–1160 °C společně s kameninou, čímž vzniká trvanlivý a jídlobezpečný povrch vhodný do myčky i trouby."
     },
     story: {
       title: "Tradice, dílna a vzorkovna",
-      intro: "Řemeslo se v rodině Štěpánků předává po generace. Začátkem roku 1991 vznikl vlastní atelier v Dejvicích a od té doby se výroba i vzorkovna průběžně rozvíjejí.",
+      intro: "Řemeslo se v rodině Štěpánků předává od konce 18. století. Pradědeček Matěj Štěpánek (1772–1861) pracoval jako hrnčíř ještě před rokem 1800; jeho potomci postupně zdokonalili výrobní techniku a přešli na vysoce slinovanou kameninu pálenou při vysokých teplotách. Petr Štěpánek, který se řemeslu vyučil u svého otce Josefa, otevřel začátkem roku 1991 vlastní atelier v Praze 6 Dejvicích. Dnes atelier nabízí více než 270 originálních výrobků ve 40 glazurách a provozuje vzorkovnu, kde si zákazníci mohou sortiment i glazury prohlédnout a porovnat osobně.",
       blocks: [
         {
-          title: "Rodinné řemeslo",
-          body: "Zkušenosti sahají až do konce 18. století. Důraz zůstává na ruční práci, vlastních glazurách a keramice, která má sloužit i zdobit."
+          title: "Šest generací hrnčířů",
+          body: "Hrnčířská tradice rodu Štěpánků sahá prokazatelně k Matěji Štěpánkovi, narozenému roku 1772. Dědeček Karel Štěpánek začal v Kasejovicích vyrábět kameninu pálenou při vysokých teplotách – technologický pokrok, který umožnil výrobu odolného nádobí pro každodenní i komerční použití. Po znárodnění továrny v roce 1950 pokračoval v tradici Josef Štěpánek, absolvent keramické školy v Bechyni, a po něm jeho syn Petr, který od roku 1991 vede atelier v Dejvicích jako šestá generace rodu."
+        },
+        {
+          title: "Výpal a glazury",
+          body: "Všechny výrobky jsou dvakrát páleny při teplotách 1140–1160 °C, čímž vzniká vysoce slinutá kamenina bez výrazné pórovitosti. Taková keramika je vhodná pro myčku i troubu a splňuje nároky každodenního provozu v domácnostech i restauracích. Sortiment nabízí 40 různých barevných glazur; 12 nejoblíbenějších designů je trvale skladem, zbylých 28 se vyrábí na objednávku."
         },
         {
           title: "Učni a předávání zkušeností",
-          body: "Od roku 1993 probíhá spolupráce s odborným učilištěm. Dílnou prošly celé generace učňů a řemeslo tak žije dál."
+          body: "Petr Štěpánek zahájil v roce 1993 spolupráci se Středním odborným učilištěm PRÓFUM a přijal první učně. Žáci získávají praktické dovednosti přímo v keramické dílně – výuka probíhá jako střídavý týdenní cyklus praxe a školní docházky v tříletém oboru s možností maturitní nástavby. Od té doby dílnou prošly celé generace absolventů a řemeslo tak zůstává živé i v dnešní přetechnizované době."
         },
         {
-          title: "Osobní přístup",
-          body: "Vzorkovna a atelier v Praze 6 umožňují osobní konzultaci, výběr glazur i přímé představení sortimentu."
+          title: "Osobní přístup a zakázky",
+          body: "Vzorkovna a atelier v Praze 6 Dejvicích umožňují osobní konzultaci, srovnání glazur a přímé objednání. Zakázkovou výrobu realizujeme pro domácnosti, restaurace i firmy – nabízíme výrobu s firemním logem, propagační keramiku a individuální motivy. Objednávky je možné zadat přes online obchod na Fler.cz nebo přímo e-mailem na stepanek@kerat.cz."
         }
       ],
       closing: "Vzorkovna a atelier jsou otevřeny pondělí až pátek 8:00–17:00, večer a víkend po dohodě. Přijďte se podívat, prohlédnout sortiment a vybrat glazuru osobně."
@@ -544,15 +548,28 @@ const locales = {
     ],
     glazeCopy: {
       title: "40 glazes, 12 stocked favourites",
-      lead: "Glaze variety is a core part of the KERAT offer. The whole assortment can be ordered in glossy, matte and combined glaze finishes."
+      lead: "Glaze variety is a core part of the KERAT offer. Every piece is available in 40 glaze options — glossy, matte and combined finishes — all fired at 1140–1160 °C together with the stoneware body. The result is a durable, food-safe surface suitable for dishwashers and ovens."
     },
     story: {
       title: "Tradition, workshop and showroom",
-      intro: "The Štěpánek family has passed pottery craft from generation to generation. A dedicated workshop opened in Dejvice in 1991 and has continued expanding its production and showroom ever since.",
+      intro: "The Štěpánek family has practised pottery since the late 18th century, when great-great-grandfather Matěj Štěpánek (1772–1861) first worked in the trade. The family progressively refined their techniques, moving to high-fire stoneware. Petr Štěpánek, who learned the craft from his father Josef, opened the current studio in Prague 6 Dejvice in early 1991. The workshop now produces over 270 original designs in 40 glaze options, with a showroom where customers can inspect and compare the full range in person.",
       blocks: [
-        { title: "Family craft", body: "The know-how goes back to the late 18th century, with a lasting focus on hand work, custom glaze recipes and useful decorative ceramics." },
-        { title: "Apprentices and continuity", body: "Since 1993 the workshop has cooperated with a vocational school and helped new generations learn the trade." },
-        { title: "Direct customer service", body: "The Prague 6 showroom allows visitors to see the assortment, compare glazes and discuss custom production directly with the makers." }
+        {
+          title: "Six generations of potters",
+          body: "The documented family pottery tradition reaches back to Matěj Štěpánek, born in 1772. His grandson Karel began producing stoneware in Kasejovice using white clay fired at high temperatures — a significant advance that yielded durable crockery for daily and commercial use. Following nationalisation of the family factory in 1950, Josef Štěpánek, who graduated from the State School of Pottery in Bechyne, and later his son Petr continued the craft. Petr has run the Dejvice workshop since 1991 as the sixth generation of Štěpánek potters."
+        },
+        {
+          title: "Firing and glazes",
+          body: "Every KERAT piece is double-fired at 1140–1160 °C, producing high-density stoneware with very low porosity. This makes the ceramics suitable for dishwashers and ovens, and durable enough for daily use in homes and restaurants. The collection is available in 40 glaze options; 12 of the most popular designs are kept in permanent stock, while the remaining 28 are produced to order."
+        },
+        {
+          title: "Apprentices and continuity",
+          body: "In 1993 Petr Štěpánek began working with the SOU PRÓFUM vocational school, accepting the first apprentices into the workshop. Students gain hands-on skills in the pottery studio through a weekly rotation of practical training and school attendance, completing a three-year course with an optional two-year extension leading to a school-leaving certificate. The workshop has trained generations of graduates since 1993, keeping the craft alive in an era of industrial manufacturing."
+        },
+        {
+          title: "Personal service and custom orders",
+          body: "The Prague 6 showroom allows visitors to compare the full range of products and glazes before ordering. Custom production is available for households, restaurants and corporate clients, including company logos, promotional ceramics and individual motifs. Orders can be placed through the online shop on Fler.cz or directly by email at stepanek@kerat.cz."
+        }
       ],
       closing: "The showroom and workshop are open Monday to Friday, 08:00–17:00, with evenings and weekends by arrangement. Come and see the collection and choose glazes in person."
     },
@@ -748,15 +765,28 @@ const locales = {
     ],
     glazeCopy: {
       title: "40 Glasuren, 12 Lagerfavoriten",
-      lead: "Die Farbvielfalt gehört wesentlich zur Marke KERAT. Das gesamte Sortiment kann in glänzenden, matten und kombinierten Glasuren bestellt werden."
+      lead: "Die Farbvielfalt gehört wesentlich zur Marke KERAT. Jedes Stück ist in 40 Glasuren erhältlich – glänzend, matt und kombiniert – und wird bei 1140–1160 °C zusammen mit dem Steinzeugkörper gebrannt. Das Ergebnis ist eine haltbare, lebensmittelsichere Oberfläche, die für Spülmaschine und Backofen geeignet ist."
     },
     story: {
       title: "Tradition, Werkstatt und Ausstellungsraum",
-      intro: "Das Handwerk wird in der Familie Štěpánek seit Generationen weitergegeben. 1991 entstand die eigene Werkstatt in Dejvice, die seitdem Produktion und Ausstellungsraum stetig erweitert hat.",
+      intro: "Das Töpferhandwerk wird in der Familie Štěpánek seit dem späten 18. Jahrhundert weitergegeben. Ahnherr Matěj Štěpánek (1772–1861) war bereits als Töpfer tätig; seine Nachkommen entwickelten die Technologie bis hin zu hochgebranntem Steinzeug weiter. Petr Štěpánek, der das Handwerk bei seinem Vater Josef erlernte, eröffnete Anfang 1991 eine eigene Werkstatt in Prag 6 Dejvice. Heute umfasst das Sortiment über 270 originale Entwürfe in 40 Glasuren; der Ausstellungsraum erlaubt es Kunden, Produkte und Glasuren persönlich zu vergleichen.",
       blocks: [
-        { title: "Familienhandwerk", body: "Das Wissen reicht bis ins späte 18. Jahrhundert zurück und stützt sich auf Handarbeit, eigene Glasurrezepturen und nützliche Dekorkeramik." },
-        { title: "Lehrlinge und Weitergabe", body: "Seit 1993 arbeitet die Werkstatt mit einer Berufsschule zusammen und bildet neue Generationen im Handwerk mit aus." },
-        { title: "Direkter Kundenkontakt", body: "Im Showroom in Prag 6 können Besucher das Sortiment sehen, Glasuren vergleichen und Sonderwünsche direkt besprechen." }
+        {
+          title: "Sechs Generationen Töpfer",
+          body: "Die nachweisliche Töpfertradition der Familie Štěpánek reicht bis Matěj Štěpánek zurück, der 1772 geboren wurde. Sein Enkel Karel begann in Kasejovice mit der Herstellung von Steinzeug aus weißem Ton bei hohen Brenntemperaturen – ein technischer Fortschritt, der robustes Alltagsgeschirr ermöglichte. Nach der Verstaatlichung der Familienfabrik 1950 setzten Josef Štěpánek, Absolvent der Keramikfachschule Bechyne, und später sein Sohn Petr die Tradition fort. Petr führt die Dejvice-Werkstatt seit 1991 als sechste Generation der Familie."
+        },
+        {
+          title: "Brand und Glasuren",
+          body: "Alle KERAT-Stücke werden zweimal bei 1140–1160 °C gebrannt, wodurch ein hochdichtes Steinzeug mit geringer Porosität entsteht. Die Keramik ist spülmaschinen- und backofengeeignet und damit für den täglichen Einsatz in Haushalten und der Gastronomie bestens geeignet. Das Sortiment ist in 40 Glasuren erhältlich; 12 der beliebtesten Designs sind dauerhaft vorrätig, die übrigen 28 werden auf Bestellung gefertigt."
+        },
+        {
+          title: "Lehrlinge und Weitergabe",
+          body: "1993 begann Petr Štěpánek die Zusammenarbeit mit der Berufsschule SOU PRÓFUM und nahm die ersten Lehrlinge auf. Die Auszubildenden erwerben praktische Fähigkeiten in der Töpferwerkstatt im wöchentlichen Wechsel zwischen Praxis und Schulbesuch, in einem dreijährigen Lehrgang mit optionalem zweijährigem Aufbaukurs mit Abschluss. Seit 1993 hat die Werkstatt mehrere Generationen von Absolventen ausgebildet und hält das Handwerk in einer zunehmend technisierten Welt lebendig."
+        },
+        {
+          title: "Direkter Kundenkontakt und Sonderanfertigungen",
+          body: "Im Showroom in Prag 6 können Besucher das gesamte Sortiment und die Glasuren vor Ort vergleichen und direkt bestellen. Sonderanfertigungen werden für Privatkunden, Gastronomiebetriebe und Unternehmen angeboten – einschließlich Firmenlogos, Werbekeramik und individueller Motive. Bestellungen sind über den Online-Shop auf Fler.cz oder direkt per E-Mail an stepanek@kerat.cz möglich."
+        }
       ],
       closing: "Showroom und Werkstatt sind Montag bis Freitag von 08:00–17:00 Uhr geöffnet, abends und am Wochenende nach Vereinbarung. Besuchen Sie uns und entdecken Sie das Sortiment persönlich."
     },
@@ -1400,7 +1430,7 @@ function buildStructuredData(locale, pageKey) {
   const business = {
     "@context": "https://schema.org",
     "@type": "Store",
-    "@id": `${absoluteUrl(locale, "home")}#business`,
+    "@id": `${absoluteSiteUrl("/")}#business`,
     additionalType: "https://www.wikidata.org/wiki/Q1969826",
     name: locales[locale].siteName,
     image: [
@@ -1804,12 +1834,30 @@ KERAT Keramika is a family-owned artisan pottery workshop located in Prague 6 De
 - Homepage (Czech): ${absoluteSiteUrl("/")}
 - Homepage (English): ${absoluteSiteUrl("/en/")}
 - Homepage (German): ${absoluteSiteUrl("/de/")}
-- Products (Czech): ${absoluteSiteUrl("/sortiment/")}
+- Products overview (Czech): ${absoluteSiteUrl("/sortiment/")}
 - Glazes (Czech): ${absoluteSiteUrl("/glazury/")}
-- About (Czech): ${absoluteSiteUrl("/o-nas/")}
+- About / Story (Czech): ${absoluteSiteUrl("/o-nas/")}
 - Contact: ${absoluteSiteUrl("/kontakt/")}
 - Story (English): ${absoluteSiteUrl("/en/story/")}
-- Products (English): ${absoluteSiteUrl("/en/products/")}
+- Products overview (English): ${absoluteSiteUrl("/en/products/")}
+- Glazes (English): ${absoluteSiteUrl("/en/glazes/")}
+- Story (German): ${absoluteSiteUrl("/de/geschichte/")}
+
+## Product categories
+
+- Tea sets (35 items): ${absoluteSiteUrl("/sortiment/tea-sets/")}
+- Mugs (69 items): ${absoluteSiteUrl("/sortiment/mugs/")} — largest category; hand-thrown mugs available in all 40 glazes
+- Aroma lamps and candle holders (46 items): ${absoluteSiteUrl("/sortiment/aroma/")}
+- Gifts and novelties (22 items): ${absoluteSiteUrl("/sortiment/gifts/")}
+- Banks and ashtrays (24 items): ${absoluteSiteUrl("/sortiment/banks/")}
+- Tableware (20 items): ${absoluteSiteUrl("/sortiment/tableware/")}
+- Small objects (30 items): ${absoluteSiteUrl("/sortiment/small-objects/")}
+- Kitchen ceramics (32 items): ${absoluteSiteUrl("/sortiment/kitchen/")} — baking dishes, spice jars, kitchen utility pieces
+- For him (32 items): ${absoluteSiteUrl("/sortiment/for-him/")}
+- For her (24 items): ${absoluteSiteUrl("/sortiment/for-her/")}
+- Vases (25 items): ${absoluteSiteUrl("/sortiment/vases/")}
+- Restaurant and hospitality ceramics (80 items): ${absoluteSiteUrl("/sortiment/hospitality/")} — durable stoneware for gastro use
+- Dining sets (16 items): ${absoluteSiteUrl("/sortiment/dining/")}
 
 ## Permissions
 
