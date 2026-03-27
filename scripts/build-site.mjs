@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import sharp from "sharp";
 
 const rootDir = path.resolve(process.cwd());
 const shopUrl = "https://www.fler.cz/kerat-keramika";
@@ -1027,13 +1028,13 @@ function renderHero(locale, currentDepth) {
         </div>
         <div class="hero-visual">
           <figure class="hero-card hero-card-main">
-            <img src="${assetHref("srdce_dvojak_hrnek.jpeg", currentDepth)}" alt="${escapeHtml(t.labels.heroImageAlt)}" fetchpriority="high" decoding="async">
+            ${renderImg("srdce_dvojak_hrnek.jpeg", currentDepth, escapeHtml(t.labels.heroImageAlt), 'fetchpriority="high" decoding="async"')}
           </figure>
           <figure class="hero-card hero-card-small">
-            <img src="${assetHref("dilna5.jpg", currentDepth)}" alt="${escapeHtml(t.labels.processAlt)}" fetchpriority="high" decoding="async">
+            ${renderImg("dilna5.jpg", currentDepth, escapeHtml(t.labels.processAlt), 'loading="lazy" decoding="async"')}
           </figure>
           <figure class="hero-card hero-card-small hero-card-offset">
-            <img src="${assetHref("vzorkovna1.jpg", currentDepth)}" alt="${escapeHtml(t.labels.showroomAlt)}" loading="lazy" decoding="async">
+            ${renderImg("vzorkovna1.jpg", currentDepth, escapeHtml(t.labels.showroomAlt), 'loading="lazy" decoding="async"')}
           </figure>
         </div>
       </div>
@@ -1049,7 +1050,7 @@ function renderCategories(locale, currentDepth, featured = false) {
       const countLabel = locale === "cs" ? "položek" : locale === "en" ? "items" : "Artikel";
       return `
         <a class="category-card category-card-link" href="${categoryHref(locale, category, currentDepth)}">
-          <img src="${assetHref(gallery.coverImage, currentDepth)}" alt="${escapeHtml(category.name)}" loading="lazy" decoding="async">
+          ${renderImg(gallery.coverImage, currentDepth, escapeHtml(category.name), 'loading="lazy" decoding="async"')}
           <div class="category-card-body">
             <div class="category-card-meta">
               <span>${gallery.itemCount} ${countLabel}</span>
@@ -1108,7 +1109,7 @@ function renderCategoryGalleryPage(locale, category, currentDepth) {
     .map(
       (item) => `
         <article class="product-card">
-          <img src="${assetHref(item.image, currentDepth)}" alt="${escapeHtml(item.caption || category.name)}" loading="lazy" decoding="async">
+          ${renderImg(item.image, currentDepth, escapeHtml(item.caption || category.name), 'loading="lazy" decoding="async"')}
           <div class="product-card-body">
             <p>${escapeHtml(item.caption || category.name)}</p>
           </div>
@@ -1149,7 +1150,7 @@ function renderGlazeCards(locale, currentDepth, limit = null) {
       const badgeClass = glaze.stock ? "badge-stocked" : "badge-order";
       return `
         <article class="glaze-card">
-          <img src="${assetHref(glaze.image, currentDepth)}" alt="${escapeHtml(`${name} ${t.nav.glazes}`)}" loading="lazy" decoding="async">
+          ${renderImg(glaze.image, currentDepth, escapeHtml(`${name} ${t.nav.glazes}`), 'loading="lazy" decoding="async"')}
           <div class="glaze-card-body">
             <div class="glaze-meta">
               <span class="glaze-id">#${glaze.id}</span>
@@ -1227,10 +1228,10 @@ function renderStory(locale, currentDepth, featured = false) {
           }
         </div>
         <div class="story-gallery">
-          <img src="${assetHref("dilna1.jpg", currentDepth)}" alt="${escapeHtml(t.labels.processAlt)}" loading="lazy" decoding="async">
-          <img src="${assetHref("dilna2.jpg", currentDepth)}" alt="${escapeHtml(t.labels.processAlt)}" loading="lazy" decoding="async">
-          <img src="${assetHref("vzorkovna2.jpg", currentDepth)}" alt="${escapeHtml(t.labels.showroomAlt)}" loading="lazy" decoding="async">
-          <img src="${assetHref("ulice.jpg", currentDepth)}" alt="${escapeHtml(t.labels.contactHeading)}" loading="lazy" decoding="async">
+          ${renderImg("dilna1.jpg", currentDepth, escapeHtml(t.labels.processAlt), 'loading="lazy" decoding="async"')}
+          ${renderImg("dilna2.jpg", currentDepth, escapeHtml(t.labels.processAlt), 'loading="lazy" decoding="async"')}
+          ${renderImg("vzorkovna2.jpg", currentDepth, escapeHtml(t.labels.showroomAlt), 'loading="lazy" decoding="async"')}
+          ${renderImg("ulice.jpg", currentDepth, escapeHtml(t.labels.contactHeading), 'loading="lazy" decoding="async"')}
         </div>
       </div>
     </section>
@@ -1533,7 +1534,7 @@ function renderPage(locale, pageKey) {
   ].join("\n");
 
   const preloadHero = pageKey === "home"
-    ? `<link rel="preload" as="image" href="${assetHref("srdce_dvojak_hrnek.jpeg", depth)}">`
+    ? `<link rel="preload" as="image" href="${assetHref("srdce_dvojak_hrnek.webp", depth)}" type="image/webp">`
     : "";
 
   return `<!doctype html>
@@ -1644,6 +1645,45 @@ function copyDir(sourceDir, targetDir) {
   }
 }
 
+let imgDims = new Map();
+
+async function processImages(sourceMediaDir, outputMediaDir) {
+  const dims = new Map();
+  const entries = fs.readdirSync(sourceMediaDir, { withFileTypes: true });
+  const rasterExts = new Set([".jpg", ".jpeg", ".png"]);
+
+  await Promise.all(
+    entries
+      .filter((e) => e.isFile() && rasterExts.has(path.extname(e.name).toLowerCase()))
+      .map(async (e) => {
+        const sourcePath = path.join(sourceMediaDir, e.name);
+        const baseName = path.basename(e.name, path.extname(e.name));
+        const webpPath = path.join(outputMediaDir, `${baseName}.webp`);
+
+        const image = sharp(sourcePath);
+        const meta = await image.metadata();
+        dims.set(e.name, { width: meta.width, height: meta.height });
+
+        await image.webp({ quality: 82 }).toFile(webpPath);
+      })
+  );
+
+  return dims;
+}
+
+function webpHref(fileName, depth) {
+  const baseName = path.basename(fileName, path.extname(fileName));
+  return assetHref(`${baseName}.webp`, depth);
+}
+
+function renderImg(fileName, depth, alt, extraAttrs) {
+  const src = assetHref(fileName, depth);
+  const webpSrc = webpHref(fileName, depth);
+  const dim = imgDims.get(fileName);
+  const dimAttrs = dim ? ` width="${dim.width}" height="${dim.height}"` : "";
+  return `<picture><source srcset="${webpSrc}" type="image/webp"><img src="${src}" alt="${alt}"${dimAttrs} ${extraAttrs}></picture>`;
+}
+
 function renderNotFoundPage() {
   const root = ".";
   return `<!doctype html>
@@ -1689,8 +1729,13 @@ function renderNotFoundPage() {
 `;
 }
 
+(async () => {
 removeDir(outputDir);
 copyDir(sourceAssetsDir, path.join(outputDir, "assets"));
+
+const sourceMediaDir = path.join(sourceAssetsDir, "media");
+const outputMediaDir = path.join(outputDir, "assets/media");
+imgDims = await processImages(sourceMediaDir, outputMediaDir);
 
 const outputFiles = [];
 
@@ -1777,3 +1822,4 @@ if (siteConfig.cname) {
 }
 
 console.log(`Generated ${outputFiles.length} HTML files plus sitemap.xml, robots.txt and 404.html in ${outputDir}`);
+})();

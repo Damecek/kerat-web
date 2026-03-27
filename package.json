@@ -5,5 +5,8 @@
     "build": "node scripts/build-site.mjs",
     "build:pages": "node scripts/build-site.mjs",
     "migrate:legacy": "node scripts/migrate-legacy-content.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
   }
 }
