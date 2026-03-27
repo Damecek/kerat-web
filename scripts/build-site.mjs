@@ -5,7 +5,7 @@ import sharp from "sharp";
 const rootDir = path.resolve(process.cwd());
 const shopUrl = "https://www.fler.cz/kerat-keramika";
 const defaultSiteUrl = "https://www.kerat.cz";
-const buildDate = "2026-03-24";
+const buildDate = new Date().toISOString().slice(0, 10);
 const outputDir = path.join(rootDir, process.env.OUTPUT_DIR || "dist");
 const sourceAssetsDir = path.join(rootDir, "src/assets");
 const galleryData = JSON.parse(
