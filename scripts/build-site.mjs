@@ -3,8 +3,7 @@ import path from "node:path";
 import sharp from "sharp";
 
 const rootDir = path.resolve(process.cwd());
-const shopUrl = "https://www.fler.cz/kerat-keramika";
-const keramikashopUrl = "https://www.keramikashop.cz/";
+const shopUrl = "https://www.keramikashop.cz/";
 const instagramUrl = "https://www.instagram.com/keramika_kerat/";
 const facebookUrl = "https://www.facebook.com/keramika.kerat/";
 const youtubeUrl = "https://www.youtube.com/channel/UCx1IW9tDGyTFEnl3Cp1wZww";
@@ -355,7 +354,7 @@ const locales = {
         },
         {
           title: "Osobní přístup a zakázky",
-          body: "Vzorkovna a atelier v Praze 6 Dejvicích umožňují osobní konzultaci, srovnání glazur a přímé objednání. Zakázkovou výrobu realizujeme pro domácnosti, restaurace i firmy – nabízíme výrobu s firemním logem, propagační keramiku a individuální motivy. Objednávky je možné zadat přes online obchod na Fler.cz nebo přímo e-mailem na stepanek@kerat.cz."
+          body: "Vzorkovna a atelier v Praze 6 Dejvicích umožňují osobní konzultaci, srovnání glazur a přímé objednání. Zakázkovou výrobu realizujeme pro domácnosti, restaurace i firmy – nabízíme výrobu s firemním logem, propagační keramiku a individuální motivy. Objednávky je možné zadat přes online obchod na Keramikashop.cz nebo přímo e-mailem na stepanek@kerat.cz."
         }
       ],
       closing: "Vzorkovna a atelier jsou otevřeny pondělí až pátek 8:00–17:00, večer a víkend po dohodě. Přijďte se podívat, prohlédnout sortiment a vybrat glazuru osobně."
@@ -370,7 +369,7 @@ const locales = {
       items: [
         {
           q: "Jak mohu objednat keramiku KERAT?",
-          a: "Keramiku objednáte přes náš online obchod na Fler.cz nebo nás kontaktujte přímo e-mailem na stepanek@kerat.cz. Větší a zakázkové objednávky řešíme individuálně."
+          a: "Keramiku objednáte přes náš online obchod na Keramikashop.cz nebo nás kontaktujte přímo e-mailem na stepanek@kerat.cz. Větší a zakázkové objednávky řešíme individuálně."
         },
         {
           q: "Je možná zakázková výroba s vlastním motivem nebo logem?",
@@ -572,7 +571,7 @@ const locales = {
         },
         {
           title: "Personal service and custom orders",
-          body: "The Prague 6 showroom allows visitors to compare the full range of products and glazes before ordering. Custom production is available for households, restaurants and corporate clients, including company logos, promotional ceramics and individual motifs. Orders can be placed through the online shop on Fler.cz or directly by email at stepanek@kerat.cz."
+          body: "The Prague 6 showroom allows visitors to compare the full range of products and glazes before ordering. Custom production is available for households, restaurants and corporate clients, including company logos, promotional ceramics and individual motifs. Orders can be placed through the online shop on Keramikashop.cz or directly by email at stepanek@kerat.cz."
         }
       ],
       closing: "The showroom and workshop are open Monday to Friday, 08:00–17:00, with evenings and weekends by arrangement. Come and see the collection and choose glazes in person."
@@ -587,7 +586,7 @@ const locales = {
       items: [
         {
           q: "How can I order KERAT pottery?",
-          a: "You can order through our online shop on Fler.cz or contact us directly at stepanek@kerat.cz. Larger and custom orders are handled individually."
+          a: "You can order through our online shop on Keramikashop.cz or contact us directly at stepanek@kerat.cz. Larger and custom orders are handled individually."
         },
         {
           q: "Is custom production with a logo or motif possible?",
@@ -789,7 +788,7 @@ const locales = {
         },
         {
           title: "Direkter Kundenkontakt und Sonderanfertigungen",
-          body: "Im Showroom in Prag 6 können Besucher das gesamte Sortiment und die Glasuren vor Ort vergleichen und direkt bestellen. Sonderanfertigungen werden für Privatkunden, Gastronomiebetriebe und Unternehmen angeboten – einschließlich Firmenlogos, Werbekeramik und individueller Motive. Bestellungen sind über den Online-Shop auf Fler.cz oder direkt per E-Mail an stepanek@kerat.cz möglich."
+          body: "Im Showroom in Prag 6 können Besucher das gesamte Sortiment und die Glasuren vor Ort vergleichen und direkt bestellen. Sonderanfertigungen werden für Privatkunden, Gastronomiebetriebe und Unternehmen angeboten – einschließlich Firmenlogos, Werbekeramik und individueller Motive. Bestellungen sind über den Online-Shop auf Keramikashop.cz oder direkt per E-Mail an stepanek@kerat.cz möglich."
         }
       ],
       closing: "Showroom und Werkstatt sind Montag bis Freitag von 08:00–17:00 Uhr geöffnet, abends und am Wochenende nach Vereinbarung. Besuchen Sie uns und entdecken Sie das Sortiment persönlich."
@@ -804,7 +803,7 @@ const locales = {
       items: [
         {
           q: "Wie kann ich KERAT Keramik bestellen?",
-          a: "Sie können über unseren Online-Shop auf Fler.cz bestellen oder uns direkt unter stepanek@kerat.cz kontaktieren. Größere und Sonderbestellungen werden individuell abgestimmt."
+          a: "Sie können über unseren Online-Shop auf Keramikashop.cz bestellen oder uns direkt unter stepanek@kerat.cz kontaktieren. Größere und Sonderbestellungen werden individuell abgestimmt."
         },
         {
           q: "Ist eine Sonderanfertigung mit Logo oder eigenem Motiv möglich?",
@@ -1032,8 +1031,7 @@ function renderFooter(locale, currentDepth) {
         <div>
           <h2>${escapeHtml(t.nav.contact)}</h2>
           <p>${escapeHtml(t.openingHoursDisplay)}</p>
-          <p><a href="${keramikashopUrl}" target="_blank" rel="noreferrer noopener">${escapeHtml(t.ctas.primary)}</a></p>
-          <p><a href="${shopUrl}" target="_blank" rel="noreferrer noopener">Fler.cz</a></p>
+          <p><a href="${shopUrl}" target="_blank" rel="noreferrer noopener">${escapeHtml(t.ctas.primary)}</a></p>
         </div>
         <div>
           <h2>${escapeHtml(t.labels.localeSwitch)}</h2>
@@ -1051,7 +1049,7 @@ function renderFooter(locale, currentDepth) {
             <a href="${youtubeUrl}" class="social-link" target="_blank" rel="noreferrer noopener" aria-label="YouTube">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58a2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" stroke="none" fill="currentColor"/></svg>
             </a>
-            <a href="${keramikashopUrl}" class="social-link social-link--shop" target="_blank" rel="noreferrer noopener" aria-label="Keramikashop.cz">
+            <a href="${shopUrl}" class="social-link social-link--shop" target="_blank" rel="noreferrer noopener" aria-label="Keramikashop.cz">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
             </a>
           </div>
@@ -1480,7 +1478,7 @@ function buildStructuredData(locale, pageKey) {
       postalCode: contact.postalCode,
       addressCountry: contact.country
     },
-    sameAs: [shopUrl, keramikashopUrl, instagramUrl, facebookUrl, youtubeUrl],
+    sameAs: [shopUrl, shopUrl, instagramUrl, facebookUrl, youtubeUrl],
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -1596,6 +1594,7 @@ function renderPage(locale, pageKey) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index,follow">
     <meta name="theme-color" content="#a14d2c">
+    <link rel="icon" href="${root}/assets/favicon.jpg" type="image/jpeg">
     <title>${escapeHtml(page.title)}</title>
     <meta name="description" content="${escapeHtml(page.description)}">
     <link rel="canonical" href="${absoluteUrl(locale, pageKey)}">
@@ -1647,6 +1646,7 @@ function renderCategoryPage(locale, category) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index,follow">
+    <link rel="icon" href="${root}/assets/favicon.jpg" type="image/jpeg">
     <title>${escapeHtml(pageTitle)}</title>
     <meta name="description" content="${escapeHtml(pageDescription)}">
     <link rel="canonical" href="${absoluteCategoryUrl(locale, category)}">
@@ -1744,6 +1744,7 @@ function renderNotFoundPage() {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow">
+    <link rel="icon" href="${root}/assets/favicon.jpg" type="image/jpeg">
     <title>Page not found | KERAT</title>
     <meta name="description" content="The requested KERAT page could not be found.">
     <link rel="stylesheet" href="${root}/assets/styles.css">
@@ -1848,7 +1849,7 @@ KERAT Keramika is a family-owned artisan pottery workshop located in Prague 6 De
 - Products: 270+ original handmade ceramic items across 14 categories
 - Glazes: 40 glaze options; 12 stocked (nos. 1, 2, 3, 4, 14, 17, 30, 35, 36, 37, 38, 39); 28 made to order
 - Firing temperature: 1140–1160 °C (high-fire stoneware)
-- Online shop: https://www.fler.cz/kerat-keramika
+- Online shop: https://www.keramikashop.cz/
 - Custom production: available (corporate logos, promotional ceramics, restaurant sets)
 
 ## Main pages
