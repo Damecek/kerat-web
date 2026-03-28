@@ -7,7 +7,8 @@ const shopUrl = "https://www.keramikashop.cz/";
 const instagramUrl = "https://www.instagram.com/keramika_kerat/";
 const facebookUrl = "https://www.facebook.com/keramika.kerat/";
 const youtubeUrl = "https://www.youtube.com/channel/UCx1IW9tDGyTFEnl3Cp1wZww";
-const mapUrl = "https://mapy.cz/zakladni?q=Stavitelsk%C3%A1%206%2F1099%2C%20Praha%206%20Dejvice";
+const mapUrlCz = "https://mapy.com/s/bucenoseza";
+const mapUrlIntl = "https://maps.app.goo.gl/P64LVUKjNwW9EPur8?g_st=ic";
 const defaultSiteUrl = "https://www.kerat.cz";
 const buildDate = new Date().toISOString().slice(0, 10);
 const outputDir = path.join(rootDir, process.env.OUTPUT_DIR || "dist");
@@ -1324,7 +1325,8 @@ function renderTrust(locale) {
 
 function renderContact(locale, asPage = false, currentDepth = 0) {
   const t = locales[locale];
-  const mapLabel = locale === "cs" ? "Otevřít v Mapy.cz" : locale === "de" ? "In Mapy.cz öffnen" : "Open in Mapy.cz";
+  const mapUrl = locale === "cs" ? mapUrlCz : mapUrlIntl;
+  const mapLabel = locale === "cs" ? "Otevřít v Mapy.cz" : locale === "de" ? "In Google Maps öffnen" : "Open in Google Maps";
   return `
     <section class="section contact-section">
       <div class="shell">
@@ -1433,6 +1435,7 @@ function renderPageBody(locale, pageKey, currentDepth) {
 }
 
 function buildStructuredData(locale, pageKey) {
+  const mapUrl = locale === "cs" ? mapUrlCz : mapUrlIntl;
   const pageUrl = absoluteUrl(locale, pageKey);
   const breadcrumbNames = [locales[locale].labels.breadcrumbs.home];
   if (pageKey !== "home") {
