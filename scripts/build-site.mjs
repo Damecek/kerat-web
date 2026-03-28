@@ -7,6 +7,7 @@ const shopUrl = "https://www.keramikashop.cz/";
 const instagramUrl = "https://www.instagram.com/keramika_kerat/";
 const facebookUrl = "https://www.facebook.com/keramika.kerat/";
 const youtubeUrl = "https://www.youtube.com/channel/UCx1IW9tDGyTFEnl3Cp1wZww";
+const mapUrl = "https://mapy.cz/zakladni?q=Stavitelsk%C3%A1%206%2F1099%2C%20Praha%206%20Dejvice";
 const defaultSiteUrl = "https://www.kerat.cz";
 const buildDate = new Date().toISOString().slice(0, 10);
 const outputDir = path.join(rootDir, process.env.OUTPUT_DIR || "dist");
@@ -992,7 +993,7 @@ function renderHeader(locale, pageKey, currentDepth, category = null) {
     <header class="site-header">
       <div class="shell header-inner">
         <a class="brand" href="${navHref(locale, "home", currentDepth)}">
-          <span class="brand-mark">K</span>
+          <img class="brand-mark" src="${relativeRoot(currentDepth)}/assets/favicon.jpg" alt="KERAT logo" width="44" height="44">
           <span class="brand-copy">
             <span class="brand-name">${escapeHtml(t.siteName)}</span>
             <span class="brand-tag">${escapeHtml(t.hero.eyebrow)}</span>
@@ -1323,6 +1324,7 @@ function renderTrust(locale) {
 
 function renderContact(locale, asPage = false, currentDepth = 0) {
   const t = locales[locale];
+  const mapLabel = locale === "cs" ? "Otevřít v Mapy.cz" : locale === "de" ? "In Mapy.cz öffnen" : "Open in Mapy.cz";
   return `
     <section class="section contact-section">
       <div class="shell">
@@ -1347,7 +1349,7 @@ function renderContact(locale, asPage = false, currentDepth = 0) {
           <div class="contact-card">
             <h2>${escapeHtml(t.homeSections.storyTitle)}</h2>
             <p>${escapeHtml(t.openingHoursDisplay)}</p>
-            <p><span class="map-placeholder">Praha 6 Dejvice</span></p>
+            <p><a class="map-placeholder" href="${mapUrl}" target="_blank" rel="noreferrer noopener">${mapLabel}</a></p>
             <div class="contact-actions">
               <a class="button button-primary" href="${shopUrl}" target="_blank" rel="noreferrer">${escapeHtml(t.ctas.primary)}</a>
               <a class="button button-secondary" href="mailto:${contact.emailPrimary}">${escapeHtml(t.contactLabel)}</a>
@@ -1464,7 +1466,7 @@ function buildStructuredData(locale, pageKey) {
     priceRange: "€€",
     currenciesAccepted: "CZK, EUR",
     paymentAccepted: "Cash, Credit Card",
-    hasMap: "https://www.google.com/maps/search/?api=1&query=Stavitelská+6%2F1099%2C+Praha+6+Dejvice",
+    hasMap: mapUrl,
     description: locales[locale].story.intro,
     foundingDate: "1991",
     founder: {
